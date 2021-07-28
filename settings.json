@@ -1,0 +1,46 @@
+{
+    "app_name": "Makerspace App",
+    "version" : "v0.0.1",
+    "copyright" : "By: Alberto A. Samaniego",
+    "year" : 2021,
+    "theme_name" : "default",
+    "custom_title_bar": false,
+    "startup_size": [
+        1400,
+        720
+    ],
+    "minimum_size": [
+        960,
+        540
+    ],
+    "lef_menu_size" : {
+        "minimum" : 50,
+        "maximum" : 240
+    },
+    "left_menu_content_margins" : 3,
+    "left_column_size" : {
+        "minimum" : 0,
+        "maximum" : 240
+    },
+    "right_column_size" : {
+        "minimum" : 0,
+        "maximum" : 240
+    },
+    "time_animation" : 500,
+    "font" : {
+        "family" : "Segoe UI",
+        "title_size" : 12,
+        "text_size" : 10
+    },
+    "database_info" : {
+        "user" : "makerspace-admin",
+        "password" : "Hd82n^@9Z1p",
+        "host" : "10.28.0.246",
+        "port" : "5432",
+        "database": "maker_space_db"
+    },
+    "user_info": {
+        "username": "null",
+        "access_level": 0
+    }
+}
