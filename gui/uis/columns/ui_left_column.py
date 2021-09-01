@@ -163,13 +163,40 @@ class Ui_LeftColumn(object):
         self.verticalLayout_3.addItem(self.verticalSpacer_2)
 
         self.menus.addWidget(self.menu_3_3dprinting)
+        self.menu_4_monday = QWidget()
+        self.menu_4_monday.setObjectName(u"menu_4_monday")
+        self.verticalLayout_5 = QVBoxLayout(self.menu_4_monday)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_4 = QVBoxLayout()
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.monday_column_frame = QFrame(self.menu_4_monday)
+        self.monday_column_frame.setObjectName(u"monday_column_frame")
+        self.monday_column_frame.setMinimumSize(QSize(0, 40))
+        self.monday_column_frame.setFrameShape(QFrame.NoFrame)
+        self.monday_column_frame.setFrameShadow(QFrame.Raised)
+        self.monday_tab_layout = QHBoxLayout(self.monday_column_frame)
+        self.monday_tab_layout.setSpacing(0)
+        self.monday_tab_layout.setObjectName(u"monday_tab_layout")
+        self.monday_tab_layout.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_4.addWidget(self.monday_column_frame)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_4.addItem(self.verticalSpacer_4)
+
+
+        self.verticalLayout_5.addLayout(self.verticalLayout_4)
+
+        self.menus.addWidget(self.menu_4_monday)
 
         self.main_pages_layout.addWidget(self.menus)
 
 
         self.retranslateUi(LeftColumn)
 
-        self.menus.setCurrentIndex(1)
+        self.menus.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(LeftColumn)

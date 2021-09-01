@@ -37,10 +37,11 @@
         "password" : "Hd82n^@9Z1p",
         "host" : "10.28.0.246",
         "port" : "5432",
-        "database": "maker_space_db"
+        "database": "makerspace_db"
     },
     "user_info": {
         "username": "null",
-        "access_level": 0
+        "access_level": 0,
+        "logged_in": false
     }
 }

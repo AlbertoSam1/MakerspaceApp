@@ -89,8 +89,12 @@ class MainWindow(QMainWindow):
             # Select menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
-            # Change to Page 1
-            MainFunctions.set_page(self, self.ui.load_pages.page_1)
+            # Change to Page 1 - Select between welcome page view or login page view
+            # This might have a bug sometimes
+            if self.settings["user_info"]["logged_in"]:
+                MainFunctions.set_page(self, self.ui.load_pages.page_10)
+            else:
+                MainFunctions.set_page(self, self.ui.load_pages.page_1)
 
             # Close both side panels
             if MainFunctions.left_column_is_visible(self):
@@ -186,6 +190,35 @@ class MainWindow(QMainWindow):
                     icon_path=Functions.set_svg_icon("icon_search.svg")
                 )
 
+        # Monday.com Button
+        if btn.objectName() == "btn_monday" or btn.objectName() == "btn_close_left_column":
+            # deselect top settings button
+            top_btn_settings.set_active(False)
+            # Check if left column is visible
+            if not MainFunctions.left_column_is_visible(self):
+                # Show/hide
+                MainFunctions.toggle_left_column(self)
+                # Select menu
+                self.ui.left_menu.select_only_one(btn.objectName())
+            else:
+                if btn.objectName() == "btn_close_left_column":
+                    # Deselect all tabs
+                    self.ui.left_menu.deselect_all_tab()
+                    # Show/hide
+                    MainFunctions.toggle_left_column(self)
+
+                # select tab
+                self.ui.left_menu.select_only_one(btn.objectName())
+
+            # Change left column page
+            if btn.objectName() != "btn_close_left_column":
+                MainFunctions.set_left_column_menu(
+                    self,
+                    menu=self.ui.left_column.menus.menu_4_monday,
+                    title="Monday.com Tab",
+                    icon_path=Functions.set_svg_icon("icon_file.svg")
+                )
+
         # TITLE BAR MENU
         # ///////////////////////////////////////////////////////////////
         
@@ -205,8 +238,33 @@ class MainWindow(QMainWindow):
 
             # Get Left Menu Btn            
             # top_settings = MainFunctions.get_left_menu_btn(self, "btn_settings")
-            # top_settings.set_active_tab(False)            
+            # top_settings.set_active_tab(False)
 
+        btns = [self.btn_shop_left_1, self.btn_ms_safety_training, self.btn_printing_dashboard,
+                self.btn_inventory_overview, self.btn_inventory_search, self.btn_inventory_update,
+                self.btn_inventory_append, self.btn_inventory_approve, self.btn_inventory_denied,
+                self.btn_monday_left]
+
+        # SETTINGS LOGOUT
+        if btn.objectName() == "btn_top_logout":
+            if self.settings["user_info"]["logged_in"]:
+                MainFunctions.set_page(self, self.ui.load_pages.page_1)
+                self.settings["user_info"]["logged_in"] = False
+
+                # Check if left column is visible
+                if MainFunctions.left_column_is_visible(self):
+                    # Show/hide
+                    MainFunctions.toggle_left_column(self)
+                # Check if right column is visible
+                if MainFunctions.right_column_is_visible(self):
+                    # Show/hide
+                    MainFunctions.toggle_right_column(self)
+
+                for i in btns:
+                    i.hide()
+
+        # DEBUG
+        print(f"Button {btn.objectName()}, clicked!")
         # DEBUG
         print(f"Button {btn.objectName()}, clicked!")
 

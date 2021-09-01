@@ -52,34 +52,34 @@ class Functions:
 
         query = f'''SELECT * FROM private.login_credentials WHERE username = %s;'''
         params = (user,)
-
         output = connection.select(query, params)
 
         try:
+            if output is None:
+                output = [[0, 1]]
+                output[0][1] = "#########"
             if output[0][1] == password:
-
-                '''a_file = open("ResourceDir/app_data.json", "r")
-                Globals.app_data = json.load(a_file)
-                a_file.close()
-
-                Globals.app_data["app_user"]['username'] = output[0][0]
-                Globals.app_data["app_user"]['access'] = output[0][2]
-
-                a_file = open("ResourceDir/app_data.json", "w")
-                json.dump(Globals.app_data, a_file, sort_keys=True, indent=4, separators=(',', ': '))
-                a_file.close()'''
 
                 parent.settings["user_info"]["username"] = output[0][0]
                 parent.settings["user_info"]["access_level"] = output[0][2]
 
-                print(parent.settings["user_info"]["access_level"])
-
-                for i in Access["level"][parent.settings["user_info"]["access_level"]]:
+                for i in Access["level"][parent.settings["user_info"]["access_level"]]["pages"]:
                     try:
                         btns[i].show()
                     except IndexError:
                         break
+                _username = Access["level"][parent.settings["user_info"]["access_level"]]["login_request"][0]
+                _password = Access["level"][parent.settings["user_info"]["access_level"]]["login_request"][1]
+                parent.web_view.set_url("https://miu2021.monday.com/auth/login_monday/email_password",
+                                        [_username, _password])
+                parent.ui.load_pages.pages.setCurrentWidget(parent.ui.load_pages.page_10)
+                parent.settings["user_info"]["logged_in"] = True
             else:
                 QMessageBox.warning(parent, 'Error', 'Bad user or password')
         except IndexError as error:
+            print(error)
             QMessageBox.warning(parent, 'Error', 'Bad user or password')
+
+        finally:
+            parent.login_user_edit.clear()
+            parent.login_pass_edit.clear()

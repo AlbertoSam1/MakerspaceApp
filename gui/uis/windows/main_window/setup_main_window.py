@@ -81,6 +81,14 @@ class SetupMainWindow:
             "show_top" : True,
             "is_active" : False
         },
+        {
+            "btn_icon": "icon_file.svg",
+            "btn_id": "btn_monday",
+            "btn_text": "Monday.com",
+            "btn_tooltip": "Open Monday.com",
+            "show_top": True,
+            "is_active": False
+        },
     ]
 
     # ADD TITLE BAR MENUS
@@ -97,6 +105,12 @@ class SetupMainWindow:
             "btn_id" : "btn_top_settings",
             "btn_tooltip" : "Top settings",
             "is_active" : False
+        },
+        {
+            "btn_icon": "icon_more_options.svg",
+            "btn_id": "btn_top_logout",
+            "btn_tooltip": "Logout",
+            "is_active": False
         }
     ]
 
@@ -220,18 +234,41 @@ class SetupMainWindow:
         self.logo = QSvgWidget(Functions.set_svg_image("logo_home.svg"))
         self.ui.load_pages.logo_frame_layout.addWidget(self.logo, Qt.AlignCenter, Qt.AlignCenter)
 
+        ## FORMAT WELCOME VIEW && LOGOUT
+        self.welcome_image = QSvgWidget(Functions.set_svg_image("SEB_UTSA.svg"))
+        self.ui.load_pages.welcome_image_logout_layout.addWidget(self.welcome_image, Qt.AlignCenter)
+
+        # ADD LEFT MENU BUTTONS
+        # Buttons openning web pages from inner tabs (ad url handling)
+
         # ADD WEBVIEW
         self.web_view = PyWebView()
         # ADD to Layout
         self.ui.load_pages.web_view_page_layout.addWidget(self.web_view)
 
-        # ADD LEFT MENU BUTTONS
-        # Buttons openning web pages from inner tabs (ad url handling)
-        def open_web_view(view):
-            self.web_view.change_url(view)
-
+        def open_web_view(url=None):
+            if url is not None:
+                self.web_view.change_url(url)
             # Change to Page 2
             MainFunctions.set_page(self, self.ui.load_pages.page_2)
+
+
+        ## General Monday.com View Button
+        self.btn_monday_left = PyPushButton(
+            text="Monday.com",
+            radius=8,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["dark_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["utsa_orange"],
+            objectName="btn_open_monday"
+        )
+        self.btn_monday_left.setMinimumHeight(40)
+        self.btn_monday_left.clicked.connect(
+            lambda: open_web_view(url="https://miu2021.monday.com/"))
+        # ADD Layout
+        self.ui.left_column.menus.monday_tab_layout.addWidget(self.btn_monday_left)
+        self.btn_monday_left.hide()
 
         ## MACHINE SHOP
 
@@ -246,7 +283,8 @@ class SetupMainWindow:
             objectName="btn_open_webview"
         )
         self.btn_shop_left_1.setMinimumHeight(40)
-        self.btn_shop_left_1.clicked.connect(lambda: open_web_view("https://miu2021.monday.com/boards/1498781623"))
+        self.btn_shop_left_1.clicked.connect(
+            lambda: open_web_view(url="https://miu2021.monday.com/"))
         # ADD Layout
         self.ui.left_column.menus.btn_ms_leftcol_layout.addWidget(self.btn_shop_left_1)
         self.btn_shop_left_1.hide()
@@ -281,7 +319,7 @@ class SetupMainWindow:
         )
         self.btn_printing_dashboard.setMinimumHeight(40)
         self.btn_printing_dashboard.clicked.connect(
-            lambda: open_web_view("https://miu2021.monday.com/boards/1498781685"))
+            lambda: open_web_view(url="https://miu2021.monday.com/"))
 
         # ADD Layout
         self.ui.left_column.menus.btn_printing_dashboard_layout.addWidget(self.btn_printing_dashboard)
@@ -404,7 +442,8 @@ class SetupMainWindow:
 
         btns = [self.btn_shop_left_1, self.btn_ms_safety_training, self.btn_printing_dashboard,
                 self.btn_inventory_overview, self.btn_inventory_search, self.btn_inventory_update,
-                self.btn_inventory_append, self.btn_inventory_approve, self.btn_inventory_denied]
+                self.btn_inventory_append, self.btn_inventory_approve, self.btn_inventory_denied,
+                self.btn_monday_left]
 
         # ADD BUTTON FOR LOGIN
         self.btn_login = PyPushButton(

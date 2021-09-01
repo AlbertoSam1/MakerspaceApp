@@ -17,7 +17,7 @@ class Ui_MainPages(object):
     def setupUi(self, MainPages):
         if not MainPages.objectName():
             MainPages.setObjectName(u"MainPages")
-        MainPages.resize(969, 661)
+        MainPages.resize(731, 600)
         self.main_pages_layout = QVBoxLayout(MainPages)
         self.main_pages_layout.setSpacing(0)
         self.main_pages_layout.setObjectName(u"main_pages_layout")
@@ -70,13 +70,13 @@ class Ui_MainPages(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
-        self.text_main_makerspace = QLabel(self.frame_2)
-        self.text_main_makerspace.setObjectName(u"text_main_makerspace")
+        self.label = QLabel(self.frame_2)
+        self.label.setObjectName(u"label")
         font = QFont()
         font.setPointSize(10)
-        self.text_main_makerspace.setFont(font)
+        self.label.setFont(font)
 
-        self.horizontalLayout.addWidget(self.text_main_makerspace)
+        self.horizontalLayout.addWidget(self.label)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -93,22 +93,22 @@ class Ui_MainPages(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.text_main_username = QLabel(self.frame_2)
-        self.text_main_username.setObjectName(u"text_main_username")
-        self.text_main_username.setMinimumSize(QSize(150, 0))
-        self.text_main_username.setFont(font)
-        self.text_main_username.setLayoutDirection(Qt.LeftToRight)
-        self.text_main_username.setAlignment(Qt.AlignCenter)
+        self.label_2 = QLabel(self.frame_2)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(150, 0))
+        self.label_2.setFont(font)
+        self.label_2.setLayoutDirection(Qt.LeftToRight)
+        self.label_2.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout.addWidget(self.text_main_username)
+        self.verticalLayout.addWidget(self.label_2)
 
-        self.text_main_username_2 = QLabel(self.frame_2)
-        self.text_main_username_2.setObjectName(u"text_main_username_2")
-        self.text_main_username_2.setMinimumSize(QSize(150, 0))
-        self.text_main_username_2.setFont(font)
-        self.text_main_username_2.setAlignment(Qt.AlignCenter)
+        self.label_3 = QLabel(self.frame_2)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMinimumSize(QSize(150, 0))
+        self.label_3.setFont(font)
+        self.label_3.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout.addWidget(self.text_main_username_2)
+        self.verticalLayout.addWidget(self.label_3)
 
 
         self.horizontalLayout_2.addLayout(self.verticalLayout)
@@ -243,32 +243,26 @@ class Ui_MainPages(object):
 
         self.verticalLayout_49.addLayout(self.horizontalLayout_51)
 
-        self.ms_st_abc123_entry_layout = QHBoxLayout()
-        self.ms_st_abc123_entry_layout.setObjectName(u"ms_st_abc123_entry_layout")
+        self.horizontalLayout_52 = QHBoxLayout()
+        self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
         self.MS_ST_add_student_abc = QLabel(self.page_3)
         self.MS_ST_add_student_abc.setObjectName(u"MS_ST_add_student_abc")
 
-        self.ms_st_abc123_entry_layout.addWidget(self.MS_ST_add_student_abc)
+        self.horizontalLayout_52.addWidget(self.MS_ST_add_student_abc)
 
         self.horizontalSpacer_41 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.ms_st_abc123_entry_layout.addItem(self.horizontalSpacer_41)
+        self.horizontalLayout_52.addItem(self.horizontalSpacer_41)
 
-        self.frame_7 = QFrame(self.page_3)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setMinimumSize(QSize(150, 0))
-        self.frame_7.setFrameShape(QFrame.StyledPanel)
-        self.frame_7.setFrameShadow(QFrame.Raised)
-        self.ms_st_abc123_entry = QHBoxLayout(self.frame_7)
-        self.ms_st_abc123_entry.setSpacing(0)
-        self.ms_st_abc123_entry.setObjectName(u"ms_st_abc123_entry")
-        self.ms_st_abc123_entry.setContentsMargins(0, 0, 0, 0)
+        self.MS_ST_add_student_abc_entry = QLineEdit(self.page_3)
+        self.MS_ST_add_student_abc_entry.setObjectName(u"MS_ST_add_student_abc_entry")
+        self.MS_ST_add_student_abc_entry.setMaxLength(6)
 
-        self.ms_st_abc123_entry_layout.addWidget(self.frame_7)
+        self.horizontalLayout_52.addWidget(self.MS_ST_add_student_abc_entry)
 
-        self.ms_st_abc123_entry_layout.setStretch(1, 1)
+        self.horizontalLayout_52.setStretch(1, 1)
 
-        self.verticalLayout_49.addLayout(self.ms_st_abc123_entry_layout)
+        self.verticalLayout_49.addLayout(self.horizontalLayout_52)
 
         self.horizontalLayout_53 = QHBoxLayout()
         self.horizontalLayout_53.setObjectName(u"horizontalLayout_53")
@@ -281,17 +275,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_53.addItem(self.horizontalSpacer_43)
 
-        self.frame_8 = QFrame(self.page_3)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setMinimumSize(QSize(150, 0))
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
-        self.ms_st_year_completed_entry = QHBoxLayout(self.frame_8)
-        self.ms_st_year_completed_entry.setSpacing(0)
-        self.ms_st_year_completed_entry.setObjectName(u"ms_st_year_completed_entry")
-        self.ms_st_year_completed_entry.setContentsMargins(0, 0, 0, 0)
+        self.MS_ST_add_student_yoc_entry = QLineEdit(self.page_3)
+        self.MS_ST_add_student_yoc_entry.setObjectName(u"MS_ST_add_student_yoc_entry")
+        self.MS_ST_add_student_yoc_entry.setMaxLength(4)
 
-        self.horizontalLayout_53.addWidget(self.frame_8)
+        self.horizontalLayout_53.addWidget(self.MS_ST_add_student_yoc_entry)
 
 
         self.verticalLayout_49.addLayout(self.horizontalLayout_53)
@@ -306,17 +294,10 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_54.addItem(self.horizontalSpacer_44)
 
-        self.frame_13 = QFrame(self.page_3)
-        self.frame_13.setObjectName(u"frame_13")
-        self.frame_13.setMinimumSize(QSize(100, 0))
-        self.frame_13.setFrameShape(QFrame.StyledPanel)
-        self.frame_13.setFrameShadow(QFrame.Raised)
-        self.ms_st_add_button = QHBoxLayout(self.frame_13)
-        self.ms_st_add_button.setSpacing(0)
-        self.ms_st_add_button.setObjectName(u"ms_st_add_button")
-        self.ms_st_add_button.setContentsMargins(0, 0, 0, 0)
+        self.MS_ST_add_student_button = QPushButton(self.page_3)
+        self.MS_ST_add_student_button.setObjectName(u"MS_ST_add_student_button")
 
-        self.horizontalLayout_54.addWidget(self.frame_13)
+        self.horizontalLayout_54.addWidget(self.MS_ST_add_student_button)
 
 
         self.verticalLayout_49.addLayout(self.horizontalLayout_54)
@@ -359,17 +340,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_56.addItem(self.horizontalSpacer_52)
 
-        self.frame_9 = QFrame(self.page_3)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setMinimumSize(QSize(150, 0))
-        self.frame_9.setFrameShape(QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QFrame.Raised)
-        self.ms_st_search_fname_entry = QHBoxLayout(self.frame_9)
-        self.ms_st_search_fname_entry.setSpacing(0)
-        self.ms_st_search_fname_entry.setObjectName(u"ms_st_search_fname_entry")
-        self.ms_st_search_fname_entry.setContentsMargins(0, 0, 0, 0)
+        self.MS_ST_search_trainee_fname_entry = QLineEdit(self.page_3)
+        self.MS_ST_search_trainee_fname_entry.setObjectName(u"MS_ST_search_trainee_fname_entry")
+        self.MS_ST_search_trainee_fname_entry.setMaxLength(100)
 
-        self.horizontalLayout_56.addWidget(self.frame_9)
+        self.horizontalLayout_56.addWidget(self.MS_ST_search_trainee_fname_entry)
 
 
         self.verticalLayout_50.addLayout(self.horizontalLayout_56)
@@ -403,17 +378,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_58.addItem(self.horizontalSpacer_53)
 
-        self.frame_10 = QFrame(self.page_3)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setMinimumSize(QSize(150, 0))
-        self.frame_10.setFrameShape(QFrame.StyledPanel)
-        self.frame_10.setFrameShadow(QFrame.Raised)
-        self.ms_st_search_lname_entry = QHBoxLayout(self.frame_10)
-        self.ms_st_search_lname_entry.setSpacing(0)
-        self.ms_st_search_lname_entry.setObjectName(u"ms_st_search_lname_entry")
-        self.ms_st_search_lname_entry.setContentsMargins(0, 0, 0, 0)
+        self.MS_ST_search_trainee_lname_entry = QLineEdit(self.page_3)
+        self.MS_ST_search_trainee_lname_entry.setObjectName(u"MS_ST_search_trainee_lname_entry")
+        self.MS_ST_search_trainee_lname_entry.setMaxLength(100)
 
-        self.horizontalLayout_58.addWidget(self.frame_10)
+        self.horizontalLayout_58.addWidget(self.MS_ST_search_trainee_lname_entry)
 
 
         self.verticalLayout_50.addLayout(self.horizontalLayout_58)
@@ -447,17 +416,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_60.addItem(self.horizontalSpacer_54)
 
-        self.frame_11 = QFrame(self.page_3)
-        self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setMinimumSize(QSize(150, 0))
-        self.frame_11.setFrameShape(QFrame.StyledPanel)
-        self.frame_11.setFrameShadow(QFrame.Raised)
-        self.ms_st_search_abc123_entry = QHBoxLayout(self.frame_11)
-        self.ms_st_search_abc123_entry.setSpacing(0)
-        self.ms_st_search_abc123_entry.setObjectName(u"ms_st_search_abc123_entry")
-        self.ms_st_search_abc123_entry.setContentsMargins(0, 0, 0, 0)
+        self.MS_ST_search_trainee_abc_entry = QLineEdit(self.page_3)
+        self.MS_ST_search_trainee_abc_entry.setObjectName(u"MS_ST_search_trainee_abc_entry")
+        self.MS_ST_search_trainee_abc_entry.setMaxLength(6)
 
-        self.horizontalLayout_60.addWidget(self.frame_11)
+        self.horizontalLayout_60.addWidget(self.MS_ST_search_trainee_abc_entry)
 
         self.horizontalLayout_60.setStretch(1, 1)
 
@@ -467,27 +430,19 @@ class Ui_MainPages(object):
 
         self.verticalLayout_50.addItem(self.verticalSpacer_27)
 
-        self.ms_st_search_button = QHBoxLayout()
-        self.ms_st_search_button.setSpacing(0)
-        self.ms_st_search_button.setObjectName(u"ms_st_search_button")
+        self.horizontalLayout_61 = QHBoxLayout()
+        self.horizontalLayout_61.setObjectName(u"horizontalLayout_61")
         self.horizontalSpacer_57 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.ms_st_search_button.addItem(self.horizontalSpacer_57)
+        self.horizontalLayout_61.addItem(self.horizontalSpacer_57)
 
-        self.frame_14 = QFrame(self.page_3)
-        self.frame_14.setObjectName(u"frame_14")
-        self.frame_14.setMinimumSize(QSize(100, 0))
-        self.frame_14.setFrameShape(QFrame.StyledPanel)
-        self.frame_14.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_69 = QHBoxLayout(self.frame_14)
-        self.horizontalLayout_69.setSpacing(0)
-        self.horizontalLayout_69.setObjectName(u"horizontalLayout_69")
-        self.horizontalLayout_69.setContentsMargins(0, 0, 0, 0)
+        self.MS_ST_search_trainee_button = QPushButton(self.page_3)
+        self.MS_ST_search_trainee_button.setObjectName(u"MS_ST_search_trainee_button")
 
-        self.ms_st_search_button.addWidget(self.frame_14)
+        self.horizontalLayout_61.addWidget(self.MS_ST_search_trainee_button)
 
 
-        self.verticalLayout_50.addLayout(self.ms_st_search_button)
+        self.verticalLayout_50.addLayout(self.horizontalLayout_61)
 
 
         self.verticalLayout_51.addLayout(self.verticalLayout_50)
@@ -519,29 +474,25 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_49.addItem(self.horizontalSpacer_56)
 
-        self.frame_12 = QFrame(self.page_3)
-        self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setMinimumSize(QSize(100, 0))
-        self.frame_12.setFrameShape(QFrame.StyledPanel)
-        self.frame_12.setFrameShadow(QFrame.Raised)
-        self.ms_st_renew_entry = QHBoxLayout(self.frame_12)
-        self.ms_st_renew_entry.setSpacing(0)
-        self.ms_st_renew_entry.setObjectName(u"ms_st_renew_entry")
-        self.ms_st_renew_entry.setContentsMargins(0, 0, 0, 0)
-        self.frame_15 = QFrame(self.frame_12)
-        self.frame_15.setObjectName(u"frame_15")
-        self.frame_15.setMinimumSize(QSize(150, 0))
-        self.frame_15.setFrameShape(QFrame.StyledPanel)
-        self.frame_15.setFrameShadow(QFrame.Raised)
-        self.ms_st_renew_edit_clear_buttons = QHBoxLayout(self.frame_15)
-        self.ms_st_renew_edit_clear_buttons.setSpacing(0)
-        self.ms_st_renew_edit_clear_buttons.setObjectName(u"ms_st_renew_edit_clear_buttons")
-        self.ms_st_renew_edit_clear_buttons.setContentsMargins(0, 0, 0, 0)
+        self.MS_ST_search_trainee_override_entry = QLineEdit(self.page_3)
+        self.MS_ST_search_trainee_override_entry.setObjectName(u"MS_ST_search_trainee_override_entry")
 
-        self.ms_st_renew_entry.addWidget(self.frame_15)
+        self.horizontalLayout_49.addWidget(self.MS_ST_search_trainee_override_entry)
 
+        self.MS_ST_search_trainee_renew = QPushButton(self.page_3)
+        self.MS_ST_search_trainee_renew.setObjectName(u"MS_ST_search_trainee_renew")
 
-        self.horizontalLayout_49.addWidget(self.frame_12)
+        self.horizontalLayout_49.addWidget(self.MS_ST_search_trainee_renew)
+
+        self.pushButton_12 = QPushButton(self.page_3)
+        self.pushButton_12.setObjectName(u"pushButton_12")
+
+        self.horizontalLayout_49.addWidget(self.pushButton_12)
+
+        self.MS_ST_search_trainee_clear = QPushButton(self.page_3)
+        self.MS_ST_search_trainee_clear.setObjectName(u"MS_ST_search_trainee_clear")
+
+        self.horizontalLayout_49.addWidget(self.MS_ST_search_trainee_clear)
 
 
         self.verticalLayout_48.addLayout(self.horizontalLayout_49)
@@ -888,17 +839,15 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_5.addWidget(self.label_4)
 
-        self.frame_53 = QFrame(self.page_5)
-        self.frame_53.setObjectName(u"frame_53")
-        self.frame_53.setMinimumSize(QSize(150, 0))
-        self.frame_53.setFrameShape(QFrame.StyledPanel)
-        self.frame_53.setFrameShadow(QFrame.Raised)
-        self.ms_inv_invtype_dropdown = QHBoxLayout(self.frame_53)
-        self.ms_inv_invtype_dropdown.setSpacing(0)
-        self.ms_inv_invtype_dropdown.setObjectName(u"ms_inv_invtype_dropdown")
-        self.ms_inv_invtype_dropdown.setContentsMargins(0, 0, 0, 0)
+        self.search_inventory_type = QComboBox(self.page_5)
+        self.search_inventory_type.setObjectName(u"search_inventory_type")
+        font3 = QFont()
+        font3.setPointSize(10)
+        font3.setBold(False)
+        font3.setWeight(50)
+        self.search_inventory_type.setFont(font3)
 
-        self.horizontalLayout_5.addWidget(self.frame_53)
+        self.horizontalLayout_5.addWidget(self.search_inventory_type)
 
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -913,10 +862,10 @@ class Ui_MainPages(object):
 
         self.label_5 = QLabel(self.page_5)
         self.label_5.setObjectName(u"label_5")
-        font3 = QFont()
-        font3.setBold(True)
-        font3.setWeight(75)
-        self.label_5.setFont(font3)
+        font4 = QFont()
+        font4.setBold(True)
+        font4.setWeight(75)
+        self.label_5.setFont(font4)
 
         self.horizontalLayout_5.addWidget(self.label_5)
 
@@ -927,6 +876,7 @@ class Ui_MainPages(object):
         self.horizontalLayout_5.addWidget(self.search_as_user)
 
         self.horizontalLayout_5.setStretch(0, 1)
+        self.horizontalLayout_5.setStretch(1, 1)
         self.horizontalLayout_5.setStretch(3, 2)
         self.horizontalLayout_5.setStretch(4, 1)
         self.horizontalLayout_5.setStretch(5, 1)
@@ -941,17 +891,14 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_6.addWidget(self.label_6)
 
-        self.frame_17 = QFrame(self.page_5)
-        self.frame_17.setObjectName(u"frame_17")
-        self.frame_17.setMinimumSize(QSize(150, 0))
-        self.frame_17.setFrameShape(QFrame.StyledPanel)
-        self.frame_17.setFrameShadow(QFrame.Raised)
-        self.ms_inv_numberof_entry = QHBoxLayout(self.frame_17)
-        self.ms_inv_numberof_entry.setSpacing(0)
-        self.ms_inv_numberof_entry.setObjectName(u"ms_inv_numberof_entry")
-        self.ms_inv_numberof_entry.setContentsMargins(0, 0, 0, 0)
+        self.search_number_of_entries = QSpinBox(self.page_5)
+        self.search_number_of_entries.setObjectName(u"search_number_of_entries")
+        self.search_number_of_entries.setFont(font3)
+        self.search_number_of_entries.setMinimum(1)
+        self.search_number_of_entries.setMaximum(10)
+        self.search_number_of_entries.setValue(5)
 
-        self.horizontalLayout_6.addWidget(self.frame_17)
+        self.horizontalLayout_6.addWidget(self.search_number_of_entries)
 
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -976,6 +923,7 @@ class Ui_MainPages(object):
         self.horizontalLayout_6.addWidget(self.search_access)
 
         self.horizontalLayout_6.setStretch(0, 1)
+        self.horizontalLayout_6.setStretch(1, 1)
         self.horizontalLayout_6.setStretch(3, 2)
         self.horizontalLayout_6.setStretch(4, 1)
         self.horizontalLayout_6.setStretch(5, 1)
@@ -990,17 +938,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_7.addWidget(self.label_8)
 
-        self.frame_16 = QFrame(self.page_5)
-        self.frame_16.setObjectName(u"frame_16")
-        self.frame_16.setMinimumSize(QSize(150, 0))
-        self.frame_16.setFrameShape(QFrame.StyledPanel)
-        self.frame_16.setFrameShadow(QFrame.Raised)
-        self.ms_inv_keyword_entry = QHBoxLayout(self.frame_16)
-        self.ms_inv_keyword_entry.setSpacing(0)
-        self.ms_inv_keyword_entry.setObjectName(u"ms_inv_keyword_entry")
-        self.ms_inv_keyword_entry.setContentsMargins(0, 0, 0, 0)
+        self.search_keyword = QLineEdit(self.page_5)
+        self.search_keyword.setObjectName(u"search_keyword")
+        self.search_keyword.setFont(font)
 
-        self.horizontalLayout_7.addWidget(self.frame_16)
+        self.horizontalLayout_7.addWidget(self.search_keyword)
 
         self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -1017,6 +959,7 @@ class Ui_MainPages(object):
         self.horizontalLayout_7.addItem(self.horizontalSpacer_9)
 
         self.horizontalLayout_7.setStretch(0, 1)
+        self.horizontalLayout_7.setStretch(1, 2)
         self.horizontalLayout_7.setStretch(3, 2)
         self.horizontalLayout_7.setStretch(4, 4)
 
@@ -1026,40 +969,49 @@ class Ui_MainPages(object):
 
         self.verticalLayout_8.addItem(self.verticalSpacer_4)
 
-        self.frame_54 = QFrame(self.page_5)
-        self.frame_54.setObjectName(u"frame_54")
-        self.frame_54.setMinimumSize(QSize(0, 30))
-        self.frame_54.setFrameShape(QFrame.StyledPanel)
-        self.frame_54.setFrameShadow(QFrame.Raised)
-        self.ms_inv_search_button = QHBoxLayout(self.frame_54)
-        self.ms_inv_search_button.setSpacing(0)
-        self.ms_inv_search_button.setObjectName(u"ms_inv_search_button")
-        self.ms_inv_search_button.setContentsMargins(0, 0, 0, 0)
+        self.search_button = QPushButton(self.page_5)
+        self.search_button.setObjectName(u"search_button")
+        self.search_button.setFont(font)
 
-        self.verticalLayout_8.addWidget(self.frame_54)
+        self.verticalLayout_8.addWidget(self.search_button)
 
         self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_8.addItem(self.verticalSpacer_5)
 
-        self.frame_18 = QFrame(self.page_5)
-        self.frame_18.setObjectName(u"frame_18")
-        self.frame_18.setMinimumSize(QSize(0, 350))
-        self.frame_18.setFrameShape(QFrame.StyledPanel)
-        self.frame_18.setFrameShadow(QFrame.Raised)
-        self.ms_inv_table_ = QVBoxLayout(self.frame_18)
-        self.ms_inv_table_.setSpacing(0)
-        self.ms_inv_table_.setObjectName(u"ms_inv_table_")
-        self.ms_inv_table_.setContentsMargins(0, 0, 0, 0)
+        self.search_display_table = QTableWidget(self.page_5)
+        if (self.search_display_table.columnCount() < 6):
+            self.search_display_table.setColumnCount(6)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.search_display_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.search_display_table.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.search_display_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.search_display_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.search_display_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.search_display_table.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        self.search_display_table.setObjectName(u"search_display_table")
+        font5 = QFont()
+        font5.setFamily(u"Adobe Devanagari")
+        font5.setPointSize(11)
+        self.search_display_table.setFont(font5)
+        self.search_display_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.search_display_table.setRowCount(0)
 
-        self.verticalLayout_8.addWidget(self.frame_18)
+        self.verticalLayout_8.addWidget(self.search_display_table)
 
         self.verticalLayout_8.setStretch(0, 2)
         self.verticalLayout_8.setStretch(1, 2)
         self.verticalLayout_8.setStretch(2, 2)
         self.verticalLayout_8.setStretch(3, 2)
         self.verticalLayout_8.setStretch(4, 1)
+        self.verticalLayout_8.setStretch(5, 2)
         self.verticalLayout_8.setStretch(6, 1)
+        self.verticalLayout_8.setStretch(7, 12)
 
         self.verticalLayout_9.addLayout(self.verticalLayout_8)
 
@@ -1087,21 +1039,15 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_8.addWidget(self.label_10)
 
+        self.update_part_id = QLineEdit(self.page_6)
+        self.update_part_id.setObjectName(u"update_part_id")
+        self.update_part_id.setFont(font3)
+
+        self.horizontalLayout_8.addWidget(self.update_part_id)
+
         self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_8.addItem(self.horizontalSpacer_10)
-
-        self.frame_23 = QFrame(self.page_6)
-        self.frame_23.setObjectName(u"frame_23")
-        self.frame_23.setMinimumSize(QSize(150, 0))
-        self.frame_23.setFrameShape(QFrame.StyledPanel)
-        self.frame_23.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_partid_entry = QHBoxLayout(self.frame_23)
-        self.ms_upd_inv_partid_entry.setSpacing(0)
-        self.ms_upd_inv_partid_entry.setObjectName(u"ms_upd_inv_partid_entry")
-        self.ms_upd_inv_partid_entry.setContentsMargins(0, 0, 0, 0)
-
-        self.horizontalLayout_8.addWidget(self.frame_23)
 
         self.label_11 = QLabel(self.page_6)
         self.label_11.setObjectName(u"label_11")
@@ -1128,17 +1074,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_9.addItem(self.horizontalSpacer_11)
 
-        self.frame_19 = QFrame(self.page_6)
-        self.frame_19.setObjectName(u"frame_19")
-        self.frame_19.setMinimumSize(QSize(150, 0))
-        self.frame_19.setFrameShape(QFrame.StyledPanel)
-        self.frame_19.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_verify_buttton = QHBoxLayout(self.frame_19)
-        self.ms_upd_inv_verify_buttton.setSpacing(0)
-        self.ms_upd_inv_verify_buttton.setObjectName(u"ms_upd_inv_verify_buttton")
-        self.ms_upd_inv_verify_buttton.setContentsMargins(0, 0, 0, 0)
+        self.update_veriffy_button = QPushButton(self.page_6)
+        self.update_veriffy_button.setObjectName(u"update_veriffy_button")
+        self.update_veriffy_button.setFont(font3)
 
-        self.horizontalLayout_9.addWidget(self.frame_19)
+        self.horizontalLayout_9.addWidget(self.update_veriffy_button)
 
 
         self.verticalLayout_13.addLayout(self.horizontalLayout_9)
@@ -1149,17 +1089,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_10.addItem(self.horizontalSpacer_12)
 
-        self.frame_20 = QFrame(self.page_6)
-        self.frame_20.setObjectName(u"frame_20")
-        self.frame_20.setMinimumSize(QSize(150, 0))
-        self.frame_20.setFrameShape(QFrame.StyledPanel)
-        self.frame_20.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_show_entries_buttton = QHBoxLayout(self.frame_20)
-        self.ms_upd_inv_show_entries_buttton.setSpacing(0)
-        self.ms_upd_inv_show_entries_buttton.setObjectName(u"ms_upd_inv_show_entries_buttton")
-        self.ms_upd_inv_show_entries_buttton.setContentsMargins(0, 0, 0, 0)
+        self.update_show_entries_button = QPushButton(self.page_6)
+        self.update_show_entries_button.setObjectName(u"update_show_entries_button")
+        self.update_show_entries_button.setFont(font3)
 
-        self.horizontalLayout_10.addWidget(self.frame_20)
+        self.horizontalLayout_10.addWidget(self.update_show_entries_button)
 
 
         self.verticalLayout_13.addLayout(self.horizontalLayout_10)
@@ -1185,16 +1119,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_12.addWidget(self.label_34)
 
-        self.frame_24 = QFrame(self.page_6)
-        self.frame_24.setObjectName(u"frame_24")
-        self.frame_24.setFrameShape(QFrame.StyledPanel)
-        self.frame_24.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_adminovrr_entry = QHBoxLayout(self.frame_24)
-        self.ms_upd_inv_adminovrr_entry.setSpacing(0)
-        self.ms_upd_inv_adminovrr_entry.setObjectName(u"ms_upd_inv_adminovrr_entry")
-        self.ms_upd_inv_adminovrr_entry.setContentsMargins(0, 0, 0, 0)
+        self.update_entry_override = QLineEdit(self.page_6)
+        self.update_entry_override.setObjectName(u"update_entry_override")
+        self.update_entry_override.setFont(font3)
 
-        self.horizontalLayout_12.addWidget(self.frame_24)
+        self.horizontalLayout_12.addWidget(self.update_entry_override)
 
 
         self.verticalLayout_12.addLayout(self.horizontalLayout_12)
@@ -1205,17 +1134,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_13.addItem(self.horizontalSpacer_14)
 
-        self.frame_22 = QFrame(self.page_6)
-        self.frame_22.setObjectName(u"frame_22")
-        self.frame_22.setMinimumSize(QSize(150, 0))
-        self.frame_22.setFrameShape(QFrame.StyledPanel)
-        self.frame_22.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_send_update_buttton = QHBoxLayout(self.frame_22)
-        self.ms_upd_inv_send_update_buttton.setSpacing(0)
-        self.ms_upd_inv_send_update_buttton.setObjectName(u"ms_upd_inv_send_update_buttton")
-        self.ms_upd_inv_send_update_buttton.setContentsMargins(0, 0, 0, 0)
+        self.update_activate_button = QPushButton(self.page_6)
+        self.update_activate_button.setObjectName(u"update_activate_button")
+        self.update_activate_button.setFont(font)
 
-        self.horizontalLayout_13.addWidget(self.frame_22)
+        self.horizontalLayout_13.addWidget(self.update_activate_button)
 
 
         self.verticalLayout_12.addLayout(self.horizontalLayout_13)
@@ -1321,29 +1244,73 @@ class Ui_MainPages(object):
         self.verticalLayout_11 = QVBoxLayout()
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.frame_25 = QFrame(self.frame_4)
-        self.frame_25.setObjectName(u"frame_25")
-        self.frame_25.setMinimumSize(QSize(150, 20))
-        self.frame_25.setFrameShape(QFrame.StyledPanel)
-        self.frame_25.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_textlabel_entry = QHBoxLayout(self.frame_25)
-        self.ms_upd_inv_textlabel_entry.setSpacing(0)
-        self.ms_upd_inv_textlabel_entry.setObjectName(u"ms_upd_inv_textlabel_entry")
-        self.ms_upd_inv_textlabel_entry.setContentsMargins(0, 0, 0, 0)
-        self.frame_41 = QFrame(self.frame_25)
-        self.frame_41.setObjectName(u"frame_41")
-        self.frame_41.setMinimumSize(QSize(150, 0))
-        self.frame_41.setFrameShape(QFrame.StyledPanel)
-        self.frame_41.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_textlabel_entry_ = QHBoxLayout(self.frame_41)
-        self.ms_upd_inv_textlabel_entry_.setSpacing(0)
-        self.ms_upd_inv_textlabel_entry_.setObjectName(u"ms_upd_inv_textlabel_entry_")
-        self.ms_upd_inv_textlabel_entry_.setContentsMargins(0, 0, 0, 0)
+        self.update_entry_1 = QLineEdit(self.frame_4)
+        self.update_entry_1.setObjectName(u"update_entry_1")
+        self.update_entry_1.setFont(font2)
+        self.update_entry_1.setLayoutDirection(Qt.LeftToRight)
+        self.update_entry_1.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
-        self.ms_upd_inv_textlabel_entry.addWidget(self.frame_41)
+        self.verticalLayout_11.addWidget(self.update_entry_1)
 
+        self.update_entry_2 = QLineEdit(self.frame_4)
+        self.update_entry_2.setObjectName(u"update_entry_2")
+        self.update_entry_2.setFont(font2)
+        self.update_entry_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
-        self.verticalLayout_11.addWidget(self.frame_25)
+        self.verticalLayout_11.addWidget(self.update_entry_2)
+
+        self.update_entry_3 = QLineEdit(self.frame_4)
+        self.update_entry_3.setObjectName(u"update_entry_3")
+        self.update_entry_3.setFont(font2)
+        self.update_entry_3.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_11.addWidget(self.update_entry_3)
+
+        self.update_entry_4 = QLineEdit(self.frame_4)
+        self.update_entry_4.setObjectName(u"update_entry_4")
+        self.update_entry_4.setFont(font2)
+        self.update_entry_4.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_11.addWidget(self.update_entry_4)
+
+        self.update_entry_5 = QLineEdit(self.frame_4)
+        self.update_entry_5.setObjectName(u"update_entry_5")
+        self.update_entry_5.setFont(font2)
+        self.update_entry_5.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_11.addWidget(self.update_entry_5)
+
+        self.update_entry_6 = QLineEdit(self.frame_4)
+        self.update_entry_6.setObjectName(u"update_entry_6")
+        self.update_entry_6.setFont(font2)
+        self.update_entry_6.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_11.addWidget(self.update_entry_6)
+
+        self.update_entry_7 = QLineEdit(self.frame_4)
+        self.update_entry_7.setObjectName(u"update_entry_7")
+        self.update_entry_7.setFont(font2)
+        self.update_entry_7.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_11.addWidget(self.update_entry_7)
+
+        self.update_entry_8 = QLineEdit(self.frame_4)
+        self.update_entry_8.setObjectName(u"update_entry_8")
+        self.update_entry_8.setFont(font2)
+        self.update_entry_8.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_11.addWidget(self.update_entry_8)
+
+        self.update_entry_9 = QLineEdit(self.frame_4)
+        self.update_entry_9.setObjectName(u"update_entry_9")
+        self.update_entry_9.setFont(font2)
+        self.update_entry_9.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_11.addWidget(self.update_entry_9)
+
+        self.verticalSpacer_20 = QSpacerItem(20, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_11.addItem(self.verticalSpacer_20)
 
 
         self.horizontalLayout_16.addLayout(self.verticalLayout_11)
@@ -1426,32 +1393,85 @@ class Ui_MainPages(object):
         self.verticalLayout_17 = QVBoxLayout()
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.update_entry_10 = QLineEdit(self.frame_4)
+        self.update_entry_10.setObjectName(u"update_entry_10")
+        self.update_entry_10.setFont(font2)
+        self.update_entry_10.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_10)
+
+        self.update_entry_11 = QLineEdit(self.frame_4)
+        self.update_entry_11.setObjectName(u"update_entry_11")
+        self.update_entry_11.setFont(font2)
+        self.update_entry_11.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_11)
+
+        self.update_entry_12 = QLineEdit(self.frame_4)
+        self.update_entry_12.setObjectName(u"update_entry_12")
+        self.update_entry_12.setFont(font2)
+        self.update_entry_12.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_12)
+
+        self.update_entry_13 = QLineEdit(self.frame_4)
+        self.update_entry_13.setObjectName(u"update_entry_13")
+        self.update_entry_13.setFont(font2)
+        self.update_entry_13.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_13)
+
+        self.update_entry_14 = QLineEdit(self.frame_4)
+        self.update_entry_14.setObjectName(u"update_entry_14")
+        self.update_entry_14.setFont(font2)
+        self.update_entry_14.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_14)
+
+        self.update_entry_15 = QLineEdit(self.frame_4)
+        self.update_entry_15.setObjectName(u"update_entry_15")
+        self.update_entry_15.setFont(font2)
+        self.update_entry_15.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_15)
+
+        self.update_entry_16 = QLineEdit(self.frame_4)
+        self.update_entry_16.setObjectName(u"update_entry_16")
+        self.update_entry_16.setFont(font2)
+        self.update_entry_16.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_16)
+
+        self.update_entry_17 = QLineEdit(self.frame_4)
+        self.update_entry_17.setObjectName(u"update_entry_17")
+        self.update_entry_17.setFont(font2)
+        self.update_entry_17.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_17)
+
+        self.update_entry_18 = QLineEdit(self.frame_4)
+        self.update_entry_18.setObjectName(u"update_entry_18")
+        self.update_entry_18.setFont(font2)
+        self.update_entry_18.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.verticalLayout_17.addWidget(self.update_entry_18)
+
+        self.verticalSpacer_18 = QSpacerItem(20, 0, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_17.addItem(self.verticalSpacer_18)
+
 
         self.horizontalLayout_16.addLayout(self.verticalLayout_17)
 
-        self.frame_42 = QFrame(self.frame_4)
-        self.frame_42.setObjectName(u"frame_42")
-        self.frame_42.setMinimumSize(QSize(150, 0))
-        self.frame_42.setFrameShape(QFrame.StyledPanel)
-        self.frame_42.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_textlabel_entry__2 = QHBoxLayout(self.frame_42)
-        self.ms_upd_inv_textlabel_entry__2.setSpacing(0)
-        self.ms_upd_inv_textlabel_entry__2.setObjectName(u"ms_upd_inv_textlabel_entry__2")
-        self.ms_upd_inv_textlabel_entry__2.setContentsMargins(0, 0, 0, 0)
+        self.update_send_button = QPushButton(self.frame_4)
+        self.update_send_button.setObjectName(u"update_send_button")
+        font6 = QFont()
+        font6.setPointSize(10)
+        font6.setBold(True)
+        font6.setWeight(75)
+        self.update_send_button.setFont(font6)
 
-        self.horizontalLayout_16.addWidget(self.frame_42)
-
-        self.frame_21 = QFrame(self.frame_4)
-        self.frame_21.setObjectName(u"frame_21")
-        self.frame_21.setMinimumSize(QSize(150, 0))
-        self.frame_21.setFrameShape(QFrame.StyledPanel)
-        self.frame_21.setFrameShadow(QFrame.Raised)
-        self.ms_upd_inv_activate_buttton = QHBoxLayout(self.frame_21)
-        self.ms_upd_inv_activate_buttton.setSpacing(0)
-        self.ms_upd_inv_activate_buttton.setObjectName(u"ms_upd_inv_activate_buttton")
-        self.ms_upd_inv_activate_buttton.setContentsMargins(0, 0, 0, 0)
-
-        self.horizontalLayout_16.addWidget(self.frame_21)
+        self.horizontalLayout_16.addWidget(self.update_send_button)
 
 
         self.verticalLayout_14.addLayout(self.horizontalLayout_16)
@@ -1484,11 +1504,11 @@ class Ui_MainPages(object):
         self.verticalLayout_37.setObjectName(u"verticalLayout_37")
         self.horizontalLayout_32 = QHBoxLayout()
         self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
-        self.text_partid = QLabel(self.page_7)
-        self.text_partid.setObjectName(u"text_partid")
-        self.text_partid.setWordWrap(False)
+        self.label_13 = QLabel(self.page_7)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setWordWrap(False)
 
-        self.horizontalLayout_32.addWidget(self.text_partid)
+        self.horizontalLayout_32.addWidget(self.label_13)
 
         self.horizontalSpacer_25 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -1508,29 +1528,37 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_33.addItem(self.horizontalSpacer_26)
 
-        self.frame_26 = QFrame(self.page_7)
-        self.frame_26.setObjectName(u"frame_26")
-        self.frame_26.setMinimumSize(QSize(150, 0))
-        self.frame_26.setFrameShape(QFrame.StyledPanel)
-        self.frame_26.setFrameShadow(QFrame.Raised)
-        self.ms_partid_pwrtool_buttton = QHBoxLayout(self.frame_26)
-        self.ms_partid_pwrtool_buttton.setSpacing(0)
-        self.ms_partid_pwrtool_buttton.setObjectName(u"ms_partid_pwrtool_buttton")
-        self.ms_partid_pwrtool_buttton.setContentsMargins(0, 0, 0, 0)
+        self.choose_item_cat_inv = QComboBox(self.page_7)
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.addItem("")
+        self.choose_item_cat_inv.setObjectName(u"choose_item_cat_inv")
+        self.choose_item_cat_inv.setFont(font3)
 
-        self.horizontalLayout_33.addWidget(self.frame_26)
+        self.horizontalLayout_33.addWidget(self.choose_item_cat_inv)
 
-        self.frame_27 = QFrame(self.page_7)
-        self.frame_27.setObjectName(u"frame_27")
-        self.frame_27.setMinimumSize(QSize(150, 0))
-        self.frame_27.setFrameShape(QFrame.StyledPanel)
-        self.frame_27.setFrameShadow(QFrame.Raised)
-        self.ms_partid_stationaryitem_buttton = QHBoxLayout(self.frame_27)
-        self.ms_partid_stationaryitem_buttton.setSpacing(0)
-        self.ms_partid_stationaryitem_buttton.setObjectName(u"ms_partid_stationaryitem_buttton")
-        self.ms_partid_stationaryitem_buttton.setContentsMargins(0, 0, 0, 0)
+        self.inventory_append_cs = QComboBox(self.page_7)
+        self.inventory_append_cs.addItem("")
+        self.inventory_append_cs.addItem("")
+        self.inventory_append_cs.setObjectName(u"inventory_append_cs")
+        self.inventory_append_cs.setEnabled(True)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.inventory_append_cs.sizePolicy().hasHeightForWidth())
+        self.inventory_append_cs.setSizePolicy(sizePolicy)
+        self.inventory_append_cs.setFont(font3)
 
-        self.horizontalLayout_33.addWidget(self.frame_27)
+        self.horizontalLayout_33.addWidget(self.inventory_append_cs)
 
 
         self.verticalLayout_37.addLayout(self.horizontalLayout_33)
@@ -1549,17 +1577,13 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_34.addWidget(self.label_16)
 
-        self.frame_28 = QFrame(self.page_7)
-        self.frame_28.setObjectName(u"frame_28")
-        self.frame_28.setMinimumSize(QSize(150, 0))
-        self.frame_28.setFrameShape(QFrame.StyledPanel)
-        self.frame_28.setFrameShadow(QFrame.Raised)
-        self.ms_partid_customid_entry = QHBoxLayout(self.frame_28)
-        self.ms_partid_customid_entry.setSpacing(0)
-        self.ms_partid_customid_entry.setObjectName(u"ms_partid_customid_entry")
-        self.ms_partid_customid_entry.setContentsMargins(0, 0, 0, 0)
+        self.lineEdit = QLineEdit(self.page_7)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setEnabled(False)
+        self.lineEdit.setFont(font3)
+        self.lineEdit.setMaxLength(2)
 
-        self.horizontalLayout_34.addWidget(self.frame_28)
+        self.horizontalLayout_34.addWidget(self.lineEdit)
 
         self.horizontalSpacer_28 = QSpacerItem(400, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -1574,17 +1598,12 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_35.addItem(self.horizontalSpacer_29)
 
-        self.frame_29 = QFrame(self.page_7)
-        self.frame_29.setObjectName(u"frame_29")
-        self.frame_29.setMinimumSize(QSize(150, 0))
-        self.frame_29.setFrameShape(QFrame.StyledPanel)
-        self.frame_29.setFrameShadow(QFrame.Raised)
-        self.ms_partid_seecurrentcustomid_buttton = QHBoxLayout(self.frame_29)
-        self.ms_partid_seecurrentcustomid_buttton.setSpacing(0)
-        self.ms_partid_seecurrentcustomid_buttton.setObjectName(u"ms_partid_seecurrentcustomid_buttton")
-        self.ms_partid_seecurrentcustomid_buttton.setContentsMargins(0, 0, 0, 0)
+        self.see_custom_button_inv = QPushButton(self.page_7)
+        self.see_custom_button_inv.setObjectName(u"see_custom_button_inv")
+        self.see_custom_button_inv.setEnabled(False)
+        self.see_custom_button_inv.setFont(font3)
 
-        self.horizontalLayout_35.addWidget(self.frame_29)
+        self.horizontalLayout_35.addWidget(self.see_custom_button_inv)
 
 
         self.verticalLayout_37.addLayout(self.horizontalLayout_35)
@@ -1606,20 +1625,15 @@ class Ui_MainPages(object):
 
         self.verticalLayout_36 = QVBoxLayout()
         self.verticalLayout_36.setObjectName(u"verticalLayout_36")
+        self.pushButton_4 = QPushButton(self.page_7)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setEnabled(False)
+        self.pushButton_4.setFont(font3)
+
+        self.verticalLayout_36.addWidget(self.pushButton_4)
+
 
         self.horizontalLayout_37.addLayout(self.verticalLayout_36)
-
-        self.frame_30 = QFrame(self.page_7)
-        self.frame_30.setObjectName(u"frame_30")
-        self.frame_30.setMinimumSize(QSize(150, 0))
-        self.frame_30.setFrameShape(QFrame.StyledPanel)
-        self.frame_30.setFrameShadow(QFrame.Raised)
-        self.ms_partid_use_buttton = QHBoxLayout(self.frame_30)
-        self.ms_partid_use_buttton.setSpacing(0)
-        self.ms_partid_use_buttton.setObjectName(u"ms_partid_use_buttton")
-        self.ms_partid_use_buttton.setContentsMargins(0, 0, 0, 0)
-
-        self.horizontalLayout_37.addWidget(self.frame_30)
 
 
         self.verticalLayout_37.addLayout(self.horizontalLayout_37)
@@ -1630,33 +1644,23 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_38.addItem(self.horizontalSpacer_32)
 
-        self.frame_31 = QFrame(self.page_7)
-        self.frame_31.setObjectName(u"frame_31")
-        self.frame_31.setMinimumSize(QSize(150, 0))
-        self.frame_31.setFrameShape(QFrame.StyledPanel)
-        self.frame_31.setFrameShadow(QFrame.Raised)
-        self.ms_partid_setentry_buttton = QHBoxLayout(self.frame_31)
-        self.ms_partid_setentry_buttton.setSpacing(0)
-        self.ms_partid_setentry_buttton.setObjectName(u"ms_partid_setentry_buttton")
-        self.ms_partid_setentry_buttton.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_3 = QPushButton(self.page_7)
+        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.pushButton_3.setEnabled(False)
+        self.pushButton_3.setFont(font3)
 
-        self.horizontalLayout_38.addWidget(self.frame_31)
+        self.horizontalLayout_38.addWidget(self.pushButton_3)
 
         self.horizontalSpacer_40 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_38.addItem(self.horizontalSpacer_40)
 
-        self.frame_32 = QFrame(self.page_7)
-        self.frame_32.setObjectName(u"frame_32")
-        self.frame_32.setMinimumSize(QSize(150, 0))
-        self.frame_32.setFrameShape(QFrame.StyledPanel)
-        self.frame_32.setFrameShadow(QFrame.Raised)
-        self.ms_partid_submitinvertory_buttton = QHBoxLayout(self.frame_32)
-        self.ms_partid_submitinvertory_buttton.setSpacing(0)
-        self.ms_partid_submitinvertory_buttton.setObjectName(u"ms_partid_submitinvertory_buttton")
-        self.ms_partid_submitinvertory_buttton.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_8 = QPushButton(self.page_7)
+        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.pushButton_8.setEnabled(False)
+        self.pushButton_8.setFont(font3)
 
-        self.horizontalLayout_38.addWidget(self.frame_32)
+        self.horizontalLayout_38.addWidget(self.pushButton_8)
 
         self.horizontalLayout_38.setStretch(0, 1)
 
@@ -1717,22 +1721,51 @@ class Ui_MainPages(object):
         self.horizontalLayout_39.addLayout(self.verticalLayout_38)
 
         self.verticalLayout_41 = QVBoxLayout()
-        self.verticalLayout_41.setSpacing(0)
         self.verticalLayout_41.setObjectName(u"verticalLayout_41")
+        self.lineEdit_9 = QLineEdit(self.page_7)
+        self.lineEdit_9.setObjectName(u"lineEdit_9")
+        self.lineEdit_9.setEnabled(False)
+
+        self.verticalLayout_41.addWidget(self.lineEdit_9)
+
+        self.lineEdit_10 = QLineEdit(self.page_7)
+        self.lineEdit_10.setObjectName(u"lineEdit_10")
+        self.lineEdit_10.setEnabled(False)
+
+        self.verticalLayout_41.addWidget(self.lineEdit_10)
+
+        self.lineEdit_11 = QLineEdit(self.page_7)
+        self.lineEdit_11.setObjectName(u"lineEdit_11")
+        self.lineEdit_11.setEnabled(False)
+
+        self.verticalLayout_41.addWidget(self.lineEdit_11)
+
+        self.lineEdit_12 = QLineEdit(self.page_7)
+        self.lineEdit_12.setObjectName(u"lineEdit_12")
+        self.lineEdit_12.setEnabled(False)
+
+        self.verticalLayout_41.addWidget(self.lineEdit_12)
+
+        self.lineEdit_13 = QLineEdit(self.page_7)
+        self.lineEdit_13.setObjectName(u"lineEdit_13")
+        self.lineEdit_13.setEnabled(False)
+
+        self.verticalLayout_41.addWidget(self.lineEdit_13)
+
+        self.lineEdit_14 = QLineEdit(self.page_7)
+        self.lineEdit_14.setObjectName(u"lineEdit_14")
+        self.lineEdit_14.setEnabled(False)
+
+        self.verticalLayout_41.addWidget(self.lineEdit_14)
+
+        self.lineEdit_15 = QLineEdit(self.page_7)
+        self.lineEdit_15.setObjectName(u"lineEdit_15")
+        self.lineEdit_15.setEnabled(False)
+
+        self.verticalLayout_41.addWidget(self.lineEdit_15)
+
 
         self.horizontalLayout_39.addLayout(self.verticalLayout_41)
-
-        self.frame_33 = QFrame(self.page_7)
-        self.frame_33.setObjectName(u"frame_33")
-        self.frame_33.setMinimumSize(QSize(200, 0))
-        self.frame_33.setFrameShape(QFrame.StyledPanel)
-        self.frame_33.setFrameShadow(QFrame.Raised)
-        self.ms_partid_unused_entry = QVBoxLayout(self.frame_33)
-        self.ms_partid_unused_entry.setSpacing(0)
-        self.ms_partid_unused_entry.setObjectName(u"ms_partid_unused_entry")
-        self.ms_partid_unused_entry.setContentsMargins(0, 0, 0, 0)
-
-        self.horizontalLayout_39.addWidget(self.frame_33)
 
         self.verticalLayout_40 = QVBoxLayout()
         self.verticalLayout_40.setObjectName(u"verticalLayout_40")
@@ -1776,17 +1809,47 @@ class Ui_MainPages(object):
 
         self.verticalLayout_39 = QVBoxLayout()
         self.verticalLayout_39.setObjectName(u"verticalLayout_39")
-        self.frame_34 = QFrame(self.page_7)
-        self.frame_34.setObjectName(u"frame_34")
-        self.frame_34.setMinimumSize(QSize(200, 0))
-        self.frame_34.setFrameShape(QFrame.StyledPanel)
-        self.frame_34.setFrameShadow(QFrame.Raised)
-        self.ms_partid_unused_entry_2 = QHBoxLayout(self.frame_34)
-        self.ms_partid_unused_entry_2.setSpacing(0)
-        self.ms_partid_unused_entry_2.setObjectName(u"ms_partid_unused_entry_2")
-        self.ms_partid_unused_entry_2.setContentsMargins(0, 0, 0, 0)
+        self.lineEdit_2 = QLineEdit(self.page_7)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setEnabled(False)
 
-        self.verticalLayout_39.addWidget(self.frame_34)
+        self.verticalLayout_39.addWidget(self.lineEdit_2)
+
+        self.lineEdit_3 = QLineEdit(self.page_7)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setEnabled(False)
+
+        self.verticalLayout_39.addWidget(self.lineEdit_3)
+
+        self.lineEdit_4 = QLineEdit(self.page_7)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setEnabled(False)
+
+        self.verticalLayout_39.addWidget(self.lineEdit_4)
+
+        self.lineEdit_5 = QLineEdit(self.page_7)
+        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.lineEdit_5.setEnabled(False)
+
+        self.verticalLayout_39.addWidget(self.lineEdit_5)
+
+        self.lineEdit_6 = QLineEdit(self.page_7)
+        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.lineEdit_6.setEnabled(False)
+
+        self.verticalLayout_39.addWidget(self.lineEdit_6)
+
+        self.lineEdit_7 = QLineEdit(self.page_7)
+        self.lineEdit_7.setObjectName(u"lineEdit_7")
+        self.lineEdit_7.setEnabled(False)
+
+        self.verticalLayout_39.addWidget(self.lineEdit_7)
+
+        self.lineEdit_8 = QLineEdit(self.page_7)
+        self.lineEdit_8.setObjectName(u"lineEdit_8")
+        self.lineEdit_8.setEnabled(False)
+
+        self.verticalLayout_39.addWidget(self.lineEdit_8)
 
 
         self.horizontalLayout_39.addLayout(self.verticalLayout_39)
@@ -1810,15 +1873,11 @@ class Ui_MainPages(object):
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.verticalLayout_34 = QVBoxLayout()
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
-        self.text_checkprevpartid = QLabel(self.page_7)
-        self.text_checkprevpartid.setObjectName(u"text_checkprevpartid")
-        font4 = QFont()
-        font4.setPointSize(10)
-        font4.setBold(True)
-        font4.setWeight(75)
-        self.text_checkprevpartid.setFont(font4)
+        self.label_17 = QLabel(self.page_7)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setFont(font6)
 
-        self.verticalLayout_34.addWidget(self.text_checkprevpartid)
+        self.verticalLayout_34.addWidget(self.label_17)
 
         self.horizontalLayout_28 = QHBoxLayout()
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
@@ -1826,17 +1885,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_28.addItem(self.horizontalSpacer_21)
 
-        self.frame_35 = QFrame(self.page_7)
-        self.frame_35.setObjectName(u"frame_35")
-        self.frame_35.setMinimumSize(QSize(100, 0))
-        self.frame_35.setFrameShape(QFrame.StyledPanel)
-        self.frame_35.setFrameShadow(QFrame.Raised)
-        self.ms_partid_check_buttton = QHBoxLayout(self.frame_35)
-        self.ms_partid_check_buttton.setSpacing(0)
-        self.ms_partid_check_buttton.setObjectName(u"ms_partid_check_buttton")
-        self.ms_partid_check_buttton.setContentsMargins(0, 0, 0, 0)
+        self.check_last_inv_id = QPushButton(self.page_7)
+        self.check_last_inv_id.setObjectName(u"check_last_inv_id")
+        self.check_last_inv_id.setFont(font3)
 
-        self.horizontalLayout_28.addWidget(self.frame_35)
+        self.horizontalLayout_28.addWidget(self.check_last_inv_id)
 
 
         self.verticalLayout_34.addLayout(self.horizontalLayout_28)
@@ -1856,15 +1909,11 @@ class Ui_MainPages(object):
 
         self.verticalLayout_35.addItem(self.verticalSpacer_21)
 
-        self.text_partid_2 = QLabel(self.page_7)
-        self.text_partid_2.setObjectName(u"text_partid_2")
-        font5 = QFont()
-        font5.setPointSize(10)
-        font5.setBold(False)
-        font5.setWeight(50)
-        self.text_partid_2.setFont(font5)
+        self.last_inv_id_label = QLabel(self.page_7)
+        self.last_inv_id_label.setObjectName(u"last_inv_id_label")
+        self.last_inv_id_label.setFont(font3)
 
-        self.verticalLayout_35.addWidget(self.text_partid_2)
+        self.verticalLayout_35.addWidget(self.last_inv_id_label)
 
         self.verticalSpacer_22 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -1889,10 +1938,10 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_31 = QHBoxLayout()
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
-        self.text_partidtobeused = QLabel(self.page_7)
-        self.text_partidtobeused.setObjectName(u"text_partidtobeused")
+        self.label_50 = QLabel(self.page_7)
+        self.label_50.setObjectName(u"label_50")
 
-        self.horizontalLayout_31.addWidget(self.text_partidtobeused)
+        self.horizontalLayout_31.addWidget(self.label_50)
 
         self.horizontalSpacer_24 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -1900,7 +1949,7 @@ class Ui_MainPages(object):
 
         self.label_51 = QLabel(self.page_7)
         self.label_51.setObjectName(u"label_51")
-        self.label_51.setFont(font5)
+        self.label_51.setFont(font3)
 
         self.horizontalLayout_31.addWidget(self.label_51)
 
@@ -1954,17 +2003,14 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_43.addWidget(self.label_53)
 
-        self.frame_36 = QFrame(self.frame_6)
-        self.frame_36.setObjectName(u"frame_36")
-        self.frame_36.setMinimumSize(QSize(100, 50))
-        self.frame_36.setFrameShape(QFrame.StyledPanel)
-        self.frame_36.setFrameShadow(QFrame.Raised)
-        self.ms_partid_csv_buttton = QHBoxLayout(self.frame_36)
-        self.ms_partid_csv_buttton.setSpacing(0)
-        self.ms_partid_csv_buttton.setObjectName(u"ms_partid_csv_buttton")
-        self.ms_partid_csv_buttton.setContentsMargins(0, 0, 0, 0)
+        self.comboBox_2 = QComboBox(self.frame_6)
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.comboBox_2.setFont(font3)
 
-        self.horizontalLayout_43.addWidget(self.frame_36)
+        self.horizontalLayout_43.addWidget(self.comboBox_2)
 
 
         self.verticalLayout_42.addLayout(self.horizontalLayout_43)
@@ -1975,17 +2021,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_42.addItem(self.horizontalSpacer_33)
 
-        self.frame_37 = QFrame(self.frame_6)
-        self.frame_37.setObjectName(u"frame_37")
-        self.frame_37.setMinimumSize(QSize(150, 0))
-        self.frame_37.setFrameShape(QFrame.StyledPanel)
-        self.frame_37.setFrameShadow(QFrame.Raised)
-        self.ms_partid_searchfile_buttton = QHBoxLayout(self.frame_37)
-        self.ms_partid_searchfile_buttton.setSpacing(0)
-        self.ms_partid_searchfile_buttton.setObjectName(u"ms_partid_searchfile_buttton")
-        self.ms_partid_searchfile_buttton.setContentsMargins(0, 0, 0, 0)
+        self.search_file_append_inv = QPushButton(self.frame_6)
+        self.search_file_append_inv.setObjectName(u"search_file_append_inv")
+        self.search_file_append_inv.setFont(font3)
 
-        self.horizontalLayout_42.addWidget(self.frame_37)
+        self.horizontalLayout_42.addWidget(self.search_file_append_inv)
 
 
         self.verticalLayout_42.addLayout(self.horizontalLayout_42)
@@ -1997,11 +2037,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_44.addWidget(self.label_54)
 
-        self.text_filenamecsv = QLabel(self.frame_6)
-        self.text_filenamecsv.setObjectName(u"text_filenamecsv")
-        self.text_filenamecsv.setFont(font5)
+        self.label_55 = QLabel(self.frame_6)
+        self.label_55.setObjectName(u"label_55")
+        self.label_55.setFont(font3)
 
-        self.horizontalLayout_44.addWidget(self.text_filenamecsv)
+        self.horizontalLayout_44.addWidget(self.label_55)
 
 
         self.verticalLayout_42.addLayout(self.horizontalLayout_44)
@@ -2012,32 +2052,20 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_41.addItem(self.horizontalSpacer_34)
 
-        self.frame_38 = QFrame(self.frame_6)
-        self.frame_38.setObjectName(u"frame_38")
-        self.frame_38.setMinimumSize(QSize(150, 0))
-        self.frame_38.setFrameShape(QFrame.StyledPanel)
-        self.frame_38.setFrameShadow(QFrame.Raised)
-        self.ms_partid_checkfile_buttton = QHBoxLayout(self.frame_38)
-        self.ms_partid_checkfile_buttton.setSpacing(0)
-        self.ms_partid_checkfile_buttton.setObjectName(u"ms_partid_checkfile_buttton")
-        self.ms_partid_checkfile_buttton.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_6 = QPushButton(self.frame_6)
+        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.pushButton_6.setFont(font3)
 
-        self.horizontalLayout_41.addWidget(self.frame_38)
+        self.horizontalLayout_41.addWidget(self.pushButton_6)
 
 
         self.verticalLayout_42.addLayout(self.horizontalLayout_41)
 
-        self.frame_52 = QFrame(self.frame_6)
-        self.frame_52.setObjectName(u"frame_52")
-        self.frame_52.setMinimumSize(QSize(150, 30))
-        self.frame_52.setFrameShape(QFrame.StyledPanel)
-        self.frame_52.setFrameShadow(QFrame.Raised)
-        self.ms_partid_percentage = QHBoxLayout(self.frame_52)
-        self.ms_partid_percentage.setSpacing(0)
-        self.ms_partid_percentage.setObjectName(u"ms_partid_percentage")
-        self.ms_partid_percentage.setContentsMargins(0, 0, 0, 0)
+        self.progressBar = QProgressBar(self.frame_6)
+        self.progressBar.setObjectName(u"progressBar")
+        self.progressBar.setValue(0)
 
-        self.verticalLayout_42.addWidget(self.frame_52)
+        self.verticalLayout_42.addWidget(self.progressBar)
 
         self.checkBox = QCheckBox(self.frame_6)
         self.checkBox.setObjectName(u"checkBox")
@@ -2050,17 +2078,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_40.addItem(self.horizontalSpacer_35)
 
-        self.frame_39 = QFrame(self.frame_6)
-        self.frame_39.setObjectName(u"frame_39")
-        self.frame_39.setMinimumSize(QSize(150, 0))
-        self.frame_39.setFrameShape(QFrame.StyledPanel)
-        self.frame_39.setFrameShadow(QFrame.Raised)
-        self.ms_partid_submitinv_buttton = QHBoxLayout(self.frame_39)
-        self.ms_partid_submitinv_buttton.setSpacing(0)
-        self.ms_partid_submitinv_buttton.setObjectName(u"ms_partid_submitinv_buttton")
-        self.ms_partid_submitinv_buttton.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_7 = QPushButton(self.frame_6)
+        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.pushButton_7.setFont(font3)
 
-        self.horizontalLayout_40.addWidget(self.frame_39)
+        self.horizontalLayout_40.addWidget(self.pushButton_7)
 
 
         self.verticalLayout_42.addLayout(self.horizontalLayout_40)
@@ -2090,22 +2112,45 @@ class Ui_MainPages(object):
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.verticalLayout_21 = QVBoxLayout()
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.text_currentinvupdatesubmissions = QLabel(self.page_8)
-        self.text_currentinvupdatesubmissions.setObjectName(u"text_currentinvupdatesubmissions")
-        self.text_currentinvupdatesubmissions.setFont(font1)
+        self.label_36 = QLabel(self.page_8)
+        self.label_36.setObjectName(u"label_36")
+        self.label_36.setFont(font1)
 
-        self.verticalLayout_21.addWidget(self.text_currentinvupdatesubmissions)
+        self.verticalLayout_21.addWidget(self.label_36)
 
-        self.frame_48 = QFrame(self.page_8)
-        self.frame_48.setObjectName(u"frame_48")
-        self.frame_48.setFrameShape(QFrame.StyledPanel)
-        self.frame_48.setFrameShadow(QFrame.Raised)
-        self.ms_ciu_table1 = QHBoxLayout(self.frame_48)
-        self.ms_ciu_table1.setSpacing(0)
-        self.ms_ciu_table1.setObjectName(u"ms_ciu_table1")
-        self.ms_ciu_table1.setContentsMargins(0, 0, 0, 0)
+        self.approve_table = QTableWidget(self.page_8)
+        if (self.approve_table.columnCount() < 5):
+            self.approve_table.setColumnCount(5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.approve_table.setHorizontalHeaderItem(0, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.approve_table.setHorizontalHeaderItem(1, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.approve_table.setHorizontalHeaderItem(2, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.approve_table.setHorizontalHeaderItem(3, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.approve_table.setHorizontalHeaderItem(4, __qtablewidgetitem10)
+        self.approve_table.setObjectName(u"approve_table")
+        self.approve_table.setFont(font5)
+        self.approve_table.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.approve_table.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.approve_table.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
+        self.approve_table.setAutoScrollMargin(16)
+        self.approve_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.approve_table.setWordWrap(False)
+        self.approve_table.setRowCount(0)
+        self.approve_table.setColumnCount(5)
+        self.approve_table.horizontalHeader().setVisible(False)
+        self.approve_table.horizontalHeader().setDefaultSectionSize(120)
 
-        self.verticalLayout_21.addWidget(self.frame_48)
+        self.verticalLayout_21.addWidget(self.approve_table)
+
+        self.refresh_approvals_inventory_button = QPushButton(self.page_8)
+        self.refresh_approvals_inventory_button.setObjectName(u"refresh_approvals_inventory_button")
+        self.refresh_approvals_inventory_button.setFont(font2)
+
+        self.verticalLayout_21.addWidget(self.refresh_approvals_inventory_button)
 
 
         self.horizontalLayout_17.addLayout(self.verticalLayout_21)
@@ -2132,17 +2177,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_18.addWidget(self.label_38)
 
-        self.frame_40 = QFrame(self.page_8)
-        self.frame_40.setObjectName(u"frame_40")
-        self.frame_40.setMinimumSize(QSize(100, 0))
-        self.frame_40.setFrameShape(QFrame.StyledPanel)
-        self.frame_40.setFrameShadow(QFrame.Raised)
-        self.ms_currentinv_requestid_entry_ = QHBoxLayout(self.frame_40)
-        self.ms_currentinv_requestid_entry_.setSpacing(0)
-        self.ms_currentinv_requestid_entry_.setObjectName(u"ms_currentinv_requestid_entry_")
-        self.ms_currentinv_requestid_entry_.setContentsMargins(0, 0, 0, 0)
+        self.approve_entry_request_id = QLineEdit(self.page_8)
+        self.approve_entry_request_id.setObjectName(u"approve_entry_request_id")
+        self.approve_entry_request_id.setFont(font3)
 
-        self.horizontalLayout_18.addWidget(self.frame_40)
+        self.horizontalLayout_18.addWidget(self.approve_entry_request_id)
 
 
         self.verticalLayout_22.addLayout(self.horizontalLayout_18)
@@ -2153,17 +2192,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_19.addItem(self.horizontalSpacer_19)
 
-        self.frame_47 = QFrame(self.page_8)
-        self.frame_47.setObjectName(u"frame_47")
-        self.frame_47.setMinimumSize(QSize(100, 0))
-        self.frame_47.setFrameShape(QFrame.StyledPanel)
-        self.frame_47.setFrameShadow(QFrame.Raised)
-        self.ms_ciu_open_button = QHBoxLayout(self.frame_47)
-        self.ms_ciu_open_button.setSpacing(0)
-        self.ms_ciu_open_button.setObjectName(u"ms_ciu_open_button")
-        self.ms_ciu_open_button.setContentsMargins(0, 0, 0, 0)
+        self.approve_open_button = QPushButton(self.page_8)
+        self.approve_open_button.setObjectName(u"approve_open_button")
+        self.approve_open_button.setFont(font3)
 
-        self.horizontalLayout_19.addWidget(self.frame_47)
+        self.horizontalLayout_19.addWidget(self.approve_open_button)
 
 
         self.verticalLayout_22.addLayout(self.horizontalLayout_19)
@@ -2175,18 +2208,6 @@ class Ui_MainPages(object):
         self.horizontalLayout_17.setStretch(1, 1)
 
         self.verticalLayout_20.addLayout(self.horizontalLayout_17)
-
-        self.frame_43 = QFrame(self.page_8)
-        self.frame_43.setObjectName(u"frame_43")
-        self.frame_43.setMinimumSize(QSize(150, 20))
-        self.frame_43.setFrameShape(QFrame.StyledPanel)
-        self.frame_43.setFrameShadow(QFrame.Raised)
-        self.ms_ciu_refresh_button = QHBoxLayout(self.frame_43)
-        self.ms_ciu_refresh_button.setSpacing(0)
-        self.ms_ciu_refresh_button.setObjectName(u"ms_ciu_refresh_button")
-        self.ms_ciu_refresh_button.setContentsMargins(0, 0, 0, 0)
-
-        self.verticalLayout_20.addWidget(self.frame_43)
 
         self.verticalSpacer_7 = QSpacerItem(20, 10, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -2209,46 +2230,28 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_20.addItem(self.horizontalSpacer_27)
 
-        self.text_approve_checkbox_confirm = QCheckBox(self.page_8)
-        self.text_approve_checkbox_confirm.setObjectName(u"text_approve_checkbox_confirm")
+        self.approve_checkbox_confirm = QCheckBox(self.page_8)
+        self.approve_checkbox_confirm.setObjectName(u"approve_checkbox_confirm")
 
-        self.horizontalLayout_20.addWidget(self.text_approve_checkbox_confirm)
+        self.horizontalLayout_20.addWidget(self.approve_checkbox_confirm)
 
-        self.frame_44 = QFrame(self.page_8)
-        self.frame_44.setObjectName(u"frame_44")
-        self.frame_44.setMinimumSize(QSize(100, 0))
-        self.frame_44.setFrameShape(QFrame.StyledPanel)
-        self.frame_44.setFrameShadow(QFrame.Raised)
-        self.ms_ciu_clear_button = QHBoxLayout(self.frame_44)
-        self.ms_ciu_clear_button.setSpacing(0)
-        self.ms_ciu_clear_button.setObjectName(u"ms_ciu_clear_button")
-        self.ms_ciu_clear_button.setContentsMargins(0, 0, 0, 0)
+        self.approve_inventory_clear_button = QPushButton(self.page_8)
+        self.approve_inventory_clear_button.setObjectName(u"approve_inventory_clear_button")
+        self.approve_inventory_clear_button.setFont(font)
 
-        self.horizontalLayout_20.addWidget(self.frame_44)
+        self.horizontalLayout_20.addWidget(self.approve_inventory_clear_button)
 
-        self.frame_45 = QFrame(self.page_8)
-        self.frame_45.setObjectName(u"frame_45")
-        self.frame_45.setMinimumSize(QSize(100, 0))
-        self.frame_45.setFrameShape(QFrame.StyledPanel)
-        self.frame_45.setFrameShadow(QFrame.Raised)
-        self.ms_ciu_confirm_button = QHBoxLayout(self.frame_45)
-        self.ms_ciu_confirm_button.setSpacing(0)
-        self.ms_ciu_confirm_button.setObjectName(u"ms_ciu_confirm_button")
-        self.ms_ciu_confirm_button.setContentsMargins(0, 0, 0, 0)
+        self.approve_confirm_button = QPushButton(self.page_8)
+        self.approve_confirm_button.setObjectName(u"approve_confirm_button")
+        self.approve_confirm_button.setFont(font)
 
-        self.horizontalLayout_20.addWidget(self.frame_45)
+        self.horizontalLayout_20.addWidget(self.approve_confirm_button)
 
-        self.frame_46 = QFrame(self.page_8)
-        self.frame_46.setObjectName(u"frame_46")
-        self.frame_46.setMinimumSize(QSize(100, 0))
-        self.frame_46.setFrameShape(QFrame.StyledPanel)
-        self.frame_46.setFrameShadow(QFrame.Raised)
-        self.ms_ciu_deny_button = QHBoxLayout(self.frame_46)
-        self.ms_ciu_deny_button.setSpacing(0)
-        self.ms_ciu_deny_button.setObjectName(u"ms_ciu_deny_button")
-        self.ms_ciu_deny_button.setContentsMargins(0, 0, 0, 0)
+        self.approve_deny_button = QPushButton(self.page_8)
+        self.approve_deny_button.setObjectName(u"approve_deny_button")
+        self.approve_deny_button.setFont(font3)
 
-        self.horizontalLayout_20.addWidget(self.frame_46)
+        self.horizontalLayout_20.addWidget(self.approve_deny_button)
 
 
         self.verticalLayout_20.addLayout(self.horizontalLayout_20)
@@ -2260,6 +2263,7 @@ class Ui_MainPages(object):
         self.verticalLayout_20.addWidget(self.approve_text_display)
 
         self.verticalLayout_20.setStretch(0, 1)
+        self.verticalLayout_20.setStretch(3, 1)
 
         self.verticalLayout_23.addLayout(self.verticalLayout_20)
 
@@ -2293,17 +2297,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_64.addWidget(self.label_76)
 
-        self.frame_49 = QFrame(self.page_9)
-        self.frame_49.setObjectName(u"frame_49")
-        self.frame_49.setMinimumSize(QSize(150, 30))
-        self.frame_49.setFrameShape(QFrame.StyledPanel)
-        self.frame_49.setFrameShadow(QFrame.Raised)
-        self.ms_currentdeny_requestid_entry = QHBoxLayout(self.frame_49)
-        self.ms_currentdeny_requestid_entry.setSpacing(0)
-        self.ms_currentdeny_requestid_entry.setObjectName(u"ms_currentdeny_requestid_entry")
-        self.ms_currentdeny_requestid_entry.setContentsMargins(0, 0, 0, 0)
+        self.denied_choose_request_id = QComboBox(self.page_9)
+        self.denied_choose_request_id.setObjectName(u"denied_choose_request_id")
+        self.denied_choose_request_id.setFont(font3)
 
-        self.horizontalLayout_64.addWidget(self.frame_49)
+        self.horizontalLayout_64.addWidget(self.denied_choose_request_id)
 
 
         self.verticalLayout_46.addLayout(self.horizontalLayout_64)
@@ -2314,17 +2312,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_65.addItem(self.horizontalSpacer_51)
 
-        self.frame_50 = QFrame(self.page_9)
-        self.frame_50.setObjectName(u"frame_50")
-        self.frame_50.setMinimumSize(QSize(150, 0))
-        self.frame_50.setFrameShape(QFrame.StyledPanel)
-        self.frame_50.setFrameShadow(QFrame.Raised)
-        self.ms_currentdeny_viewrequest_button = QHBoxLayout(self.frame_50)
-        self.ms_currentdeny_viewrequest_button.setSpacing(0)
-        self.ms_currentdeny_viewrequest_button.setObjectName(u"ms_currentdeny_viewrequest_button")
-        self.ms_currentdeny_viewrequest_button.setContentsMargins(0, 0, 0, 0)
+        self.denied_veiw_button = QPushButton(self.page_9)
+        self.denied_veiw_button.setObjectName(u"denied_veiw_button")
+        self.denied_veiw_button.setFont(font3)
 
-        self.horizontalLayout_65.addWidget(self.frame_50)
+        self.horizontalLayout_65.addWidget(self.denied_veiw_button)
 
 
         self.verticalLayout_46.addLayout(self.horizontalLayout_65)
@@ -2357,17 +2349,11 @@ class Ui_MainPages(object):
 
         self.horizontalLayout_66.addItem(self.horizontalSpacer_59)
 
-        self.frame_51 = QFrame(self.page_9)
-        self.frame_51.setObjectName(u"frame_51")
-        self.frame_51.setMinimumSize(QSize(150, 0))
-        self.frame_51.setFrameShape(QFrame.StyledPanel)
-        self.frame_51.setFrameShadow(QFrame.Raised)
-        self.ms_currentdeny_delete_button = QHBoxLayout(self.frame_51)
-        self.ms_currentdeny_delete_button.setSpacing(0)
-        self.ms_currentdeny_delete_button.setObjectName(u"ms_currentdeny_delete_button")
-        self.ms_currentdeny_delete_button.setContentsMargins(0, 0, 0, 0)
+        self.denied_delete_button = QPushButton(self.page_9)
+        self.denied_delete_button.setObjectName(u"denied_delete_button")
+        self.denied_delete_button.setFont(font)
 
-        self.horizontalLayout_66.addWidget(self.frame_51)
+        self.horizontalLayout_66.addWidget(self.denied_delete_button)
 
 
         self.verticalLayout_24.addLayout(self.horizontalLayout_66)
@@ -2380,13 +2366,20 @@ class Ui_MainPages(object):
         self.verticalLayout_47.addLayout(self.verticalLayout_24)
 
         self.pages.addWidget(self.page_9)
+        self.page_10 = QWidget()
+        self.page_10.setObjectName(u"page_10")
+        self.welcome_image_logout_layout = QVBoxLayout(self.page_10)
+        self.welcome_image_logout_layout.setSpacing(0)
+        self.welcome_image_logout_layout.setObjectName(u"welcome_image_logout_layout")
+        self.welcome_image_logout_layout.setContentsMargins(0, 0, 0, 0)
+        self.pages.addWidget(self.page_10)
 
         self.main_pages_layout.addWidget(self.pages)
 
 
         self.retranslateUi(MainPages)
 
-        self.pages.setCurrentIndex(7)
+        self.pages.setCurrentIndex(9)
 
 
         QMetaObject.connectSlotsByName(MainPages)
@@ -2394,39 +2387,44 @@ class Ui_MainPages(object):
 
     def retranslateUi(self, MainPages):
         MainPages.setWindowTitle(QCoreApplication.translate("MainPages", u"Form", None))
-        self.text_main_makerspace.setText(QCoreApplication.translate("MainPages", u"Welcome to the Makerspace App!", None))
-        self.text_main_username.setText(QCoreApplication.translate("MainPages", u"Username", None))
-        self.text_main_username_2.setText(QCoreApplication.translate("MainPages", u"Password", None))
+        self.label.setText(QCoreApplication.translate("MainPages", u"Welcome to the Makerspace App!", None))
+        self.label_2.setText(QCoreApplication.translate("MainPages", u"Username", None))
+        self.label_3.setText(QCoreApplication.translate("MainPages", u"Password", None))
         self.MS_ST_add_student_label.setText(QCoreApplication.translate("MainPages", u"Add New Student", None))
         self.MS_ST_add_student_full_name.setText(QCoreApplication.translate("MainPages", u"Full Name", None))
         self.MS_ST_add_student_abc.setText(QCoreApplication.translate("MainPages", u"abc123", None))
         self.MS_ST_add_student_yoc.setText(QCoreApplication.translate("MainPages", u"Year of Conmpletion", None))
+        self.MS_ST_add_student_button.setText(QCoreApplication.translate("MainPages", u"Add", None))
         self.MS_ST_search_trainee_label.setText(QCoreApplication.translate("MainPages", u"Search Trainee", None))
         self.MS_ST_search_trainee_fname.setText(QCoreApplication.translate("MainPages", u"First Name", None))
         self.MS_ST_search_trainee_or1.setText(QCoreApplication.translate("MainPages", u"or", None))
         self.MS_ST_search_trainee_lname.setText(QCoreApplication.translate("MainPages", u"Last Name", None))
         self.MS_ST_search_trainee_or2.setText(QCoreApplication.translate("MainPages", u"or", None))
         self.MS_ST_search_trainee_abc.setText(QCoreApplication.translate("MainPages", u"abc123", None))
+        self.MS_ST_search_trainee_button.setText(QCoreApplication.translate("MainPages", u"Search", None))
         self.MS_ST_search_trainee_textbrowser.setHtml(QCoreApplication.translate("MainPages", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">Machine Shop - Safety Training Record </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600"
-                        ";\">For: __name__</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:60"
+                        "0;\">For: __name__</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">With student ID: __abc123__</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">The sudent has (hasn't) been safety trained within</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">the last 2 years.</span></p>\n"
-"<p style=\"-qt-"
-                        "paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\"><br /></p>\n"
+"<p style=\"-qt"
+                        "-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">RowdyMaker: T/F</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">Maker Level:</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><s"
-                        "pan style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">Write OXSDR and click renew to extend this student's</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><"
+                        "span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">Write OXSDR and click renew to extend this student's</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:12pt; font-weight:600;\">safety training record another year.</span></p></body></html>", None))
+        self.MS_ST_search_trainee_renew.setText(QCoreApplication.translate("MainPages", u"Renew", None))
+        self.pushButton_12.setText(QCoreApplication.translate("MainPages", u"Edit Record", None))
+        self.MS_ST_search_trainee_clear.setText(QCoreApplication.translate("MainPages", u"Clear", None))
         self.label_41.setText(QCoreApplication.translate("MainPages", u"Inventory Overview", None))
         self.main_date_label.setText(QCoreApplication.translate("MainPages", u"Week of November 16, 2020", None))
         self.cons_label.setText(QCoreApplication.translate("MainPages", u"Consumables Used:", None))
@@ -2466,6 +2464,7 @@ class Ui_MainPages(object):
         self.next_general_inv_value.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
         self.search_inventory_title.setText(QCoreApplication.translate("MainPages", u"Search Inventory", None))
         self.label_4.setText(QCoreApplication.translate("MainPages", u"Inventory Type", None))
+        self.search_inventory_type.setCurrentText("")
         self.search_checkbox_keyword_as.setText(QCoreApplication.translate("MainPages", u"Keyword as Part ID", None))
         self.label_5.setText(QCoreApplication.translate("MainPages", u"Running Search as:", None))
         self.search_as_user.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
@@ -2475,13 +2474,29 @@ class Ui_MainPages(object):
         self.search_access.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
         self.label_8.setText(QCoreApplication.translate("MainPages", u"Keyword", None))
         self.search_checkbox_best_fit.setText(QCoreApplication.translate("MainPages", u"Return Best Fit Item", None))
+        self.search_button.setText(QCoreApplication.translate("MainPages", u"Search", None))
+        ___qtablewidgetitem = self.search_display_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainPages", u"Part ID", None));
+        ___qtablewidgetitem1 = self.search_display_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainPages", u"Name", None));
+        ___qtablewidgetitem2 = self.search_display_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainPages", u"Location", None));
+        ___qtablewidgetitem3 = self.search_display_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainPages", u"Quantity", None));
+        ___qtablewidgetitem4 = self.search_display_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainPages", u"Available", None));
+        ___qtablewidgetitem5 = self.search_display_table.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainPages", u"Who has it", None));
         self.label_9.setText(QCoreApplication.translate("MainPages", u"Update Inventory Based on Part ID", None))
         self.label_10.setText(QCoreApplication.translate("MainPages", u"Part ID", None))
         self.label_11.setText(QCoreApplication.translate("MainPages", u"Part Name:", None))
         self.update_resulting_part_name.setText("")
         self.label_12.setText(QCoreApplication.translate("MainPages", u"Updating as:", None))
+        self.update_veriffy_button.setText(QCoreApplication.translate("MainPages", u"Verify", None))
+        self.update_show_entries_button.setText(QCoreApplication.translate("MainPages", u"Show Entries", None))
         self.label_33.setText(QCoreApplication.translate("MainPages", u"Approve as Admin", None))
         self.label_34.setText(QCoreApplication.translate("MainPages", u"Admin Override:", None))
+        self.update_activate_button.setText(QCoreApplication.translate("MainPages", u"Activate", None))
         self.update_admin_label.setText(QCoreApplication.translate("MainPages", u"Updating as Admin", None))
         self.update_label_1.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
         self.update_label_2.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
@@ -2501,10 +2516,31 @@ class Ui_MainPages(object):
         self.update_label_16.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
         self.update_label_17.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
         self.update_label_18.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
-        self.text_partid.setText(QCoreApplication.translate("MainPages", u"Select Part ID", None))
+        self.update_send_button.setText(QCoreApplication.translate("MainPages", u"Send Update", None))
+        self.label_13.setText(QCoreApplication.translate("MainPages", u"Select Part ID", None))
         self.label_14.setText(QCoreApplication.translate("MainPages", u"Choose Part / Item Category", None))
+        self.choose_item_cat_inv.setItemText(0, QCoreApplication.translate("MainPages", u"Power Tool", None))
+        self.choose_item_cat_inv.setItemText(1, QCoreApplication.translate("MainPages", u"3D Printing", None))
+        self.choose_item_cat_inv.setItemText(2, QCoreApplication.translate("MainPages", u"Hand Tool", None))
+        self.choose_item_cat_inv.setItemText(3, QCoreApplication.translate("MainPages", u"Clamp Tool", None))
+        self.choose_item_cat_inv.setItemText(4, QCoreApplication.translate("MainPages", u"Measuring Tool", None))
+        self.choose_item_cat_inv.setItemText(5, QCoreApplication.translate("MainPages", u"Drill Bits", None))
+        self.choose_item_cat_inv.setItemText(6, QCoreApplication.translate("MainPages", u"Tap and Die", None))
+        self.choose_item_cat_inv.setItemText(7, QCoreApplication.translate("MainPages", u"Tool Cart", None))
+        self.choose_item_cat_inv.setItemText(8, QCoreApplication.translate("MainPages", u"Soldering", None))
+        self.choose_item_cat_inv.setItemText(9, QCoreApplication.translate("MainPages", u"Desktop Computer", None))
+        self.choose_item_cat_inv.setItemText(10, QCoreApplication.translate("MainPages", u"Office Supply", None))
+        self.choose_item_cat_inv.setItemText(11, QCoreApplication.translate("MainPages", u"Non Groupable Item", None))
+
+        self.inventory_append_cs.setItemText(0, QCoreApplication.translate("MainPages", u"Stationary Item", None))
+        self.inventory_append_cs.setItemText(1, QCoreApplication.translate("MainPages", u"Consumable", None))
+
         self.label_15.setText(QCoreApplication.translate("MainPages", u"If required - For Non Groupable Items set custom ID", None))
         self.label_16.setText(QCoreApplication.translate("MainPages", u"\"AB\":", None))
+        self.see_custom_button_inv.setText(QCoreApplication.translate("MainPages", u"See Current Custom ID's", None))
+        self.pushButton_4.setText(QCoreApplication.translate("MainPages", u"Use", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainPages", u"Set Entries", None))
+        self.pushButton_8.setText(QCoreApplication.translate("MainPages", u"Submit to Inventory", None))
         self.label_20.setText(QCoreApplication.translate("MainPages", u"Unused", None))
         self.label_21.setText(QCoreApplication.translate("MainPages", u"Unused", None))
         self.label_22.setText(QCoreApplication.translate("MainPages", u"Unused", None))
@@ -2519,28 +2555,53 @@ class Ui_MainPages(object):
         self.label_31.setText(QCoreApplication.translate("MainPages", u"Unused", None))
         self.label_32.setText(QCoreApplication.translate("MainPages", u"Unused", None))
         self.label_35.setText(QCoreApplication.translate("MainPages", u"Unused", None))
-        self.text_checkprevpartid.setText(QCoreApplication.translate("MainPages", u"Check Previous Part ID", None))
-        self.text_partid_2.setText(QCoreApplication.translate("MainPages", u"Part Id", None))
-        self.text_partidtobeused.setText(QCoreApplication.translate("MainPages", u"Part ID to be used:", None))
+        self.label_17.setText(QCoreApplication.translate("MainPages", u"Check Previous Part ID", None))
+        self.check_last_inv_id.setText(QCoreApplication.translate("MainPages", u"Check", None))
+        self.last_inv_id_label.setText(QCoreApplication.translate("MainPages", u"Part Id", None))
+        self.label_50.setText(QCoreApplication.translate("MainPages", u"Part ID to be used:", None))
         self.label_51.setText(QCoreApplication.translate("MainPages", u"N/A", None))
         self.label_19.setText(QCoreApplication.translate("MainPages", u"Append multiple parts / items", None))
         self.label_52.setText(QCoreApplication.translate("MainPages", u"from file", None))
         self.label_53.setText(QCoreApplication.translate("MainPages", u"Type of file:", None))
+        self.comboBox_2.setItemText(0, QCoreApplication.translate("MainPages", u"CSV", None))
+        self.comboBox_2.setItemText(1, QCoreApplication.translate("MainPages", u"Formated Excel", None))
+        self.comboBox_2.setItemText(2, QCoreApplication.translate("MainPages", u"Json", None))
+
+        self.search_file_append_inv.setText(QCoreApplication.translate("MainPages", u"Search File", None))
         self.label_54.setText(QCoreApplication.translate("MainPages", u"File to use:", None))
-        self.text_filenamecsv.setText(QCoreApplication.translate("MainPages", u"Filename.csv", None))
+        self.label_55.setText(QCoreApplication.translate("MainPages", u"Filename.csv", None))
+        self.pushButton_6.setText(QCoreApplication.translate("MainPages", u"Check File", None))
         self.checkBox.setText(QCoreApplication.translate("MainPages", u"File is ready to be submitted", None))
-        self.text_currentinvupdatesubmissions.setText(QCoreApplication.translate("MainPages", u"Current Inventory Updates Submitted", None))
+        self.pushButton_7.setText(QCoreApplication.translate("MainPages", u"Submit to Inventory", None))
+        self.label_36.setText(QCoreApplication.translate("MainPages", u"Current Inventory Updates Submitted", None))
+        ___qtablewidgetitem6 = self.approve_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainPages", u"Request ID", None));
+        ___qtablewidgetitem7 = self.approve_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainPages", u"Date Submitted", None));
+        ___qtablewidgetitem8 = self.approve_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainPages", u"Submitted By", None));
+        ___qtablewidgetitem9 = self.approve_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainPages", u"Line Update Count", None));
+        ___qtablewidgetitem10 = self.approve_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainPages", u"Reviewed", None));
+        self.refresh_approvals_inventory_button.setText(QCoreApplication.translate("MainPages", u"Refresh", None))
         self.label_37.setText(QCoreApplication.translate("MainPages", u"Review", None))
         self.label_38.setText(QCoreApplication.translate("MainPages", u"Request ID", None))
+        self.approve_open_button.setText(QCoreApplication.translate("MainPages", u"Open", None))
         self.label_39.setText(QCoreApplication.translate("MainPages", u"Request ID:", None))
         self.label_40.setText(QCoreApplication.translate("MainPages", u"TextLabel", None))
-        self.text_approve_checkbox_confirm.setText(QCoreApplication.translate("MainPages", u"I have reviewed and confirmed the validity of this update", None))
+        self.approve_checkbox_confirm.setText(QCoreApplication.translate("MainPages", u"I have reviewed and confirmed the validity of this update", None))
+        self.approve_inventory_clear_button.setText(QCoreApplication.translate("MainPages", u"Clear", None))
+        self.approve_confirm_button.setText(QCoreApplication.translate("MainPages", u"Confirm Update", None))
+        self.approve_deny_button.setText(QCoreApplication.translate("MainPages", u"Deny Update", None))
         self.approve_text_display.setHtml(QCoreApplication.translate("MainPages", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Adobe Devanagari'; font-size:14pt; font-weight:600;\">Entrie Submitted for Approval</span></p></body></html>", None))
         self.label_69.setText(QCoreApplication.translate("MainPages", u"Current Denied Updates", None))
         self.label_76.setText(QCoreApplication.translate("MainPages", u"Request ID:", None))
+        self.denied_veiw_button.setText(QCoreApplication.translate("MainPages", u"View Request", None))
+        self.denied_delete_button.setText(QCoreApplication.translate("MainPages", u"Delete", None))
     # retranslateUi
 
