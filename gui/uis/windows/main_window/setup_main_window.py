@@ -33,6 +33,8 @@ from . functions_main_window import *
 # ///////////////////////////////////////////////////////////////
 from gui.core.functions import *
 
+import asyncio
+
 # PY WINDOW
 # ///////////////////////////////////////////////////////////////
 
@@ -243,15 +245,26 @@ class SetupMainWindow:
 
         # ADD WEBVIEW
         self.web_view = PyWebView()
+        # self.settings["user_info"]["web_view"] = self.web_view
+        # ADD Download Requests
+        self.web_view.page().profile().downloadRequested.connect(self.on_downloadRequested)
         # ADD to Layout
         self.ui.load_pages.web_view_page_layout.addWidget(self.web_view)
 
-        def open_web_view(url=None):
-            if url is not None:
-                self.web_view.change_url(url)
-            # Change to Page 2
-            MainFunctions.set_page(self, self.ui.load_pages.page_2)
+        def open_web_view(parent, url=None):
+            _username = Access["level"][parent.settings["user_info"]["access_level"]]["login_request"][0]
+            _password = Access["level"][parent.settings["user_info"]["access_level"]]["login_request"][1]
 
+            parent.btn_monday_left.setDisabled(True)
+            try:
+                if url is not None:
+                    parent.web_view.set_url(url, [_username, _password])
+                    # Change to Page 2
+            except:
+                parent.web_view.change_url(url)
+            finally:
+                MainFunctions.set_page(parent, self.ui.load_pages.page_2)
+                self.btn_monday_left.setDisabled(False)
 
         ## General Monday.com View Button
         self.btn_monday_left = PyPushButton(
@@ -265,7 +278,7 @@ class SetupMainWindow:
         )
         self.btn_monday_left.setMinimumHeight(40)
         self.btn_monday_left.clicked.connect(
-            lambda: open_web_view(url="https://miu2021.monday.com/"))
+            lambda: open_web_view(self, url="https://miu2021.monday.com/"))
         # ADD Layout
         self.ui.left_column.menus.monday_tab_layout.addWidget(self.btn_monday_left)
         self.btn_monday_left.hide()
@@ -284,7 +297,7 @@ class SetupMainWindow:
         )
         self.btn_shop_left_1.setMinimumHeight(40)
         self.btn_shop_left_1.clicked.connect(
-            lambda: open_web_view(url="https://miu2021.monday.com/"))
+            lambda: open_web_view(self, url="https://miu2021.monday.com/boards/1498781623"))
         # ADD Layout
         self.ui.left_column.menus.btn_ms_leftcol_layout.addWidget(self.btn_shop_left_1)
         self.btn_shop_left_1.hide()
@@ -319,7 +332,7 @@ class SetupMainWindow:
         )
         self.btn_printing_dashboard.setMinimumHeight(40)
         self.btn_printing_dashboard.clicked.connect(
-            lambda: open_web_view(url="https://miu2021.monday.com/"))
+            lambda: open_web_view(self, url="https://miu2021.monday.com/boards/1637009663"))
 
         # ADD Layout
         self.ui.left_column.menus.btn_printing_dashboard_layout.addWidget(self.btn_printing_dashboard)
@@ -440,10 +453,48 @@ class SetupMainWindow:
         self.ui.left_column.menus.btn_inventory_denied_layout.addWidget(self.btn_inventory_denied)
         self.btn_inventory_denied.hide()
 
+        def handle_logout(parent, btns):
+            parent.web_view.page().profile().cookieStore().deleteAllCookies()
+            parent.web_view.loaded = False
+            parent.web_view.page().deleteLater()
+
+            MainFunctions.set_page(parent, parent.ui.load_pages.page_1)
+
+            parent.settings["user_info"]["logged_in"] = False
+
+            # Check if left column is visible
+            if MainFunctions.left_column_is_visible(parent):
+                # Show/hide
+                MainFunctions.toggle_left_column(parent)
+            # Check if right column is visible
+            if MainFunctions.right_column_is_visible(parent):
+                # Show/hide
+                MainFunctions.toggle_right_column(parent)
+
+            for i in btns:
+                try:
+                    i.hide()
+                except IndexError:
+                    break
+
+        # ADD BUTTON FOR LOGOUT
+        self.btn_logout = PyPushButton(
+            text="Log Out",
+            radius=10,
+            color=self.themes["app_color"]["text_foreground"],
+            bg_color=self.themes["app_color"]["bg_one"],
+            bg_color_hover=self.themes["app_color"]["dark_three"],
+            bg_color_pressed=self.themes["app_color"]["utsa_orange"],
+            objectName="btn_logout"
+        )
+
+        self.btn_logout.setMinimumHeight(40)
         btns = [self.btn_shop_left_1, self.btn_ms_safety_training, self.btn_printing_dashboard,
                 self.btn_inventory_overview, self.btn_inventory_search, self.btn_inventory_update,
                 self.btn_inventory_append, self.btn_inventory_approve, self.btn_inventory_denied,
-                self.btn_monday_left]
+                self.btn_monday_left, self.btn_logout]
+        self.btn_logout.clicked.connect(lambda: handle_logout(self, btns))
+        self.ui.right_column.logout_btn_layout.addWidget(self.btn_logout)
 
         # ADD BUTTON FOR LOGIN
         self.btn_login = PyPushButton(
@@ -467,6 +518,8 @@ class SetupMainWindow:
     # Resize or change position when window is resized
     # ///////////////////////////////////////////////////////////////
 
+    # ADD WEBVIEW
+
     def resize_grips(self):
         if self.settings["custom_title_bar"]:
             self.left_grip.setGeometry(5, 10, 10, self.height())
@@ -476,3 +529,4 @@ class SetupMainWindow:
             self.top_right_grip.setGeometry(self.width() - 20, 5, 15, 15)
             self.bottom_left_grip.setGeometry(5, self.height() - 20, 15, 15)
             self.bottom_right_grip.setGeometry(self.width() - 20, self.height() - 20, 15, 15)
+

@@ -12,6 +12,9 @@
 from gui.uis.windows.main_window.functions_main_window import *
 import sys
 import os
+from tika import parser
+import requests
+import json
 
 # IMPORT QT CORE
 # ///////////////////////////////////////////////////////////////
@@ -25,6 +28,8 @@ from gui.core.json_settings import Settings
 # ///////////////////////////////////////////////////////////////
 # MAIN WINDOW
 from gui.uis.windows.main_window import *
+
+from gui.access.levels import Access
 
 # IMPORT PY ONE DARK WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -63,10 +68,89 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
         self.show()
 
+        # Temp file
+        self.temp_file = None
+        self.temp_file_path = None
+        self.current_quote_id = None
+
     # LEFT MENU BTN IS CLICKED
     # Run function when btn is clicked
     # Check function by object name / btn_id
     # ///////////////////////////////////////////////////////////////
+    @Slot("QWebEngineDownloadItem*")
+    def on_downloadRequested(self, download):
+        # old_path = download.url().path()  # download.path()
+        # suffix = QFileInfo(old_path).suffix()
+        # path, _ = QFileDialog.getSaveFileName(self, "Save File", old_path, "*." + suffix)
+        # this one worked path = "gui/temp_files/temp_quote.pdf"
+        self.temp_file_path = "gui/temp_files/temp_quote.pdf"
+
+        if self.temp_file_path:
+            download.setPath(self.temp_file_path)
+            download.accept()
+            download.finished.connect(self.download_upload2monday)
+
+    def download_upload2monday(self):
+        raw = parser.from_file(self.temp_file_path)
+        text = raw['content'].split("\n")
+        self.current_quote_id = None
+        p = None
+
+        for i in text:
+            if 'Quote No.' in i:
+                p = i.split(" ")
+                self.current_quote_id = p[-1]
+
+        if p is not None:
+            self.monday_file_label_mutation()
+
+    def monday_file_label_mutation(self):
+        apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjEyMzM1MzIyMSwidWlkIjoyMzM2NDc0MiwiaWFkIjoiMjAyMS0wOS0wNFQxMzoxNDowMC42MTNaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6OTQ3NDk3MCwicmduIjoidXNlMSJ9.aG-yZgvcVuY1m45UkZwjscOYRmOTVZezt-aoS0m5XX0"
+        apiUrl = "https://api.monday.com/v2"
+        headers = {"Authorization": apiKey}
+
+        query = '''query ($boardID:Int!, $quoteID:String!) {
+        items_by_column_values (board_id:$boardID , column_id: "numbers", column_value: $quoteID) {id name}}'''
+
+        board_id = 1498781623
+        vars2 = {
+            'boardID': board_id,
+            'quoteID': self.current_quote_id
+        }
+
+        data = {'query': query, 'variables': vars2}
+        r = requests.post(url=apiUrl, json=data, headers=headers)  # make request
+
+        data_1 = r.json()
+        column_id = data_1['data']['items_by_column_values'][0]["id"]
+        # Upload file based on column ID
+        url = "https://api.monday.com/v2/file"
+        payload = {
+            'query': 'mutation add_file($file: File!, $itemID: Int!) {add_file_to_column(item_id: $itemID, column_id: "files_1", file: $file) {id}}',
+            'variables': f'{{"itemID": {column_id}}}', 'map': '{"pdf": "variables.file"}'}
+
+        files = [('pdf', (f"quoteID-{self.current_quote_id}.pdf", open(self.temp_file_path, 'rb'), 'pdf/pdf'))]
+
+        headers = {'Authorization': apiKey, }
+
+        response = requests.request("POST", url, headers=headers, data=payload, files=files)
+
+        # Change status column
+
+        query5 = 'mutation ($myItemID: Int!, $columnVals: JSON!) { change_multiple_column_values (board_id:1498781623, item_id:$myItemID, column_values:$columnVals) { id } }'
+
+        vars = {
+            'myItemID': int(column_id),
+            'columnVals': json.dumps({
+                'status': {'label': 'Waiting Agreement'}
+            })
+        }
+
+        data = {'query': query5, 'variables': vars}
+        requests.post(url=apiUrl, json=data, headers=headers)  # make request
+        # Debug
+        # print(r.json())
+
     def btn_clicked(self):
         # GET BT CLICKED
         btn = SetupMainWindow.setup_btns(self)
@@ -226,29 +310,25 @@ class MainWindow(QMainWindow):
         if btn.objectName() == "btn_top_settings":
             # Toogle Active
             if not MainFunctions.right_column_is_visible(self):
-                btn.set_active(True)
-
                 # Show / Hide
                 MainFunctions.toggle_right_column(self)
             else:
-                btn.set_active(False)
-
                 # Show / Hide
                 MainFunctions.toggle_right_column(self)
 
-            # Get Left Menu Btn            
+            MainFunctions.set_right_column_menu(self, menu=self.ui.right_column.menu_2)
+            # Get Left Menu Btn
             # top_settings = MainFunctions.get_left_menu_btn(self, "btn_settings")
             # top_settings.set_active_tab(False)
 
+        """
         btns = [self.btn_shop_left_1, self.btn_ms_safety_training, self.btn_printing_dashboard,
                 self.btn_inventory_overview, self.btn_inventory_search, self.btn_inventory_update,
                 self.btn_inventory_append, self.btn_inventory_approve, self.btn_inventory_denied,
                 self.btn_monday_left]
-
         # SETTINGS LOGOUT
         if btn.objectName() == "btn_top_logout":
             if self.settings["user_info"]["logged_in"]:
-                MainFunctions.set_page(self, self.ui.load_pages.page_1)
                 self.settings["user_info"]["logged_in"] = False
 
                 # Check if left column is visible
@@ -260,11 +340,36 @@ class MainWindow(QMainWindow):
                     # Show/hide
                     MainFunctions.toggle_right_column(self)
 
+                self.settings["user_info"]["web_view"].page().profile().cookieStore().deleteAllCookies()
+                # Access["level"][self.settings["user_info"]["access_level"]]["login_request"][0] = ""
+                # Access["level"][self.settings["user_info"]["access_level"]]["login_request"][1] = ""
+
                 for i in btns:
                     i.hide()
 
-        # DEBUG
-        print(f"Button {btn.objectName()}, clicked!")
+                self.settings["user_info"]["web_view"] = None
+                MainFunctions.set_page(self, self.ui.load_pages.page_1)"""
+
+        # SETTINGS LOGOUT
+        if btn.objectName() == "btn_top_logout":
+            # Toogle Active
+            if not MainFunctions.right_column_is_visible(self):
+                btn.set_active(True)
+
+                # Show / Hide
+                MainFunctions.toggle_right_column(self)
+            else:
+                btn.set_active(False)
+
+                # Show / Hide
+                MainFunctions.toggle_right_column(self)
+
+            MainFunctions.set_right_column_menu(self, menu=self.ui.right_column.menu_1)
+
+            # Get Left Menu Btn
+            # top_settings = MainFunctions.get_left_menu_btn(self, "btn_settings")
+            # top_settings.set_active_tab(False)
+
         # DEBUG
         print(f"Button {btn.objectName()}, clicked!")
 

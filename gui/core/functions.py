@@ -50,13 +50,16 @@ class Functions:
     def handle_login(parent, user, password, btns):
         connection = Database()
 
-        query = f'''SELECT * FROM private.login_credentials WHERE username = %s;'''
-        params = (user,)
-        output = connection.select(query, params)
+        try:
+            query = f'''SELECT * FROM private.login_credentials WHERE username = %s;'''
+            params = (user,)
+            output = connection.select(query, params)
+        except TimeoutError:
+            output = None
 
         try:
             if output is None:
-                output = [[0, 1]]
+                output = [["", ""]]
                 output[0][1] = "#########"
             if output[0][1] == password:
 
@@ -68,10 +71,12 @@ class Functions:
                         btns[i].show()
                     except IndexError:
                         break
-                _username = Access["level"][parent.settings["user_info"]["access_level"]]["login_request"][0]
+
+                '''_username = Access["level"][parent.settings["user_info"]["access_level"]]["login_request"][0]
                 _password = Access["level"][parent.settings["user_info"]["access_level"]]["login_request"][1]
+
                 parent.web_view.set_url("https://miu2021.monday.com/auth/login_monday/email_password",
-                                        [_username, _password])
+                                        [_username, _password])'''
                 parent.ui.load_pages.pages.setCurrentWidget(parent.ui.load_pages.page_10)
                 parent.settings["user_info"]["logged_in"] = True
             else:
